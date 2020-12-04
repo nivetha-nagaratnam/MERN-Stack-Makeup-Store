@@ -5,6 +5,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import ProductPage from '../ProductPage/ProductPage';
 import userService from '../../utils/userService';
 import tokenService from '../../utils/tokenService';
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -30,7 +31,7 @@ class App extends Component {
         user={this.state.user}
         handleLogout={this.handleLogout}
         />
-        <p>Welcome To Makeup Store</p>
+        <h1 className="App"> Welcome To Makeup Store</h1>
         <Switch>
         <Route exact path='/signup' render={({ history }) => 
             <SignupPage
