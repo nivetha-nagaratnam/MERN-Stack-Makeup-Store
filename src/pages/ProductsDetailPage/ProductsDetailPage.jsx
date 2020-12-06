@@ -15,7 +15,7 @@ class ProductsDetailPage extends Component {
       .get('http://localhost:3000/api/products/'+this.props.match.params.id)
       .then(res => {
         this.setState({
-          book: res.data
+          product: res.data
         })
       })
       .catch(err => {

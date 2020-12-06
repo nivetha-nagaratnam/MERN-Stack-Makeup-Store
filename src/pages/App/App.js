@@ -7,12 +7,12 @@ import userService from '../../utils/userService';
 // import tokenService from '../../utils/tokenService';
 import './App.css';
 import CreateProduct from '../../components/CreateProduct/CreateProduct';
-import ViewProductsPage from '../../components/ViewProductsPage/ViewProductsPage';
-import ProductsDetailPage from '../../components/ProductsDetailPage/ProductsDetailPage';
-import LipProductsPage from '../../components/LipProductsPage/LipProductsPage';
-import EyeProductsPage from '../../components/EyeProductsPage/EyeProductsPage';
-import CheekProductsPage from '../../components/CheekProductsPage/CheekProductsPage'
-import FaceProductsPage from '../../components/FaceProductsPage/FaceProductsPage'
+import ViewProductsPage from '../ViewProductsPage/ViewProductsPage';
+import ProductsDetailPage from '../ProductsDetailPage/ProductsDetailPage';
+import LipProductsPage from '../LipProductsPage/LipProductsPage';
+import EyeProductsPage from '../EyeProductsPage/EyeProductsPage';
+import CheekProductsPage from '../CheekProductsPage/CheekProductsPage'
+import FaceProductsPage from '../FaceProductsPage/FaceProductsPage'
 
 class App extends Component {
   constructor() {
