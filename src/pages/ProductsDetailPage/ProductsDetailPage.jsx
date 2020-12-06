@@ -6,10 +6,11 @@ class ProductsDetailPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: {},
-      user: '',
-      content:'',
-      rating:''
+      product: [],
+      review: [],
+      user: "",
+      content: "",
+      rating: "",
     };
   }
 
@@ -23,16 +24,21 @@ class ProductsDetailPage extends Component {
     const data = {
       user: this.state.user,
       content: this.state.content,
-      rating: this.state.rating
+      rating: this.state.rating,
     };
 
     axios
-      .post("http://localhost:3000/api/reviews/products/"+this.props.match.params.id+'/reviews', data)
+      .post(
+        "http://localhost:3000/api/reviews/products/" +
+          this.props.match.params.id +
+          "/reviews",
+        data
+      )
       .then((res) => {
         this.setState({
           user: "",
           content: "",
-          rating: ""
+          rating: "",
         });
         //redirect
         // this.props.history.push("/");
@@ -44,23 +50,24 @@ class ProductsDetailPage extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:3000/api/products/'+this.props.match.params.id)
-      .then(res => {
+      .get("http://localhost:3000/api/products/" + this.props.match.params.id)
+      .then((res) => {
         this.setState({
-          product: res.data
-        })
+          product: res.data,
+          review: Object.values(res.data.review) || null,
+        });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log("Error from ProductDetailsPage");
-      })
-  };
+      });
+  }
 
   render() {
-
     const product = this.state.product;
-    let productItem = <div>
-      <table className="table table-hover table-dark">
-        {/* <thead>
+    let productItem = (
+      <div>
+        <table className="table table-hover table-dark">
+          {/* <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">First</th>
@@ -68,149 +75,143 @@ class ProductsDetailPage extends Component {
             <th scope="col">Handle</th>
           </tr>
         </thead> */}
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Name</td>
+              <td>{product.name}</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Brand</td>
+              <td>{product.brand}</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Shade</td>
+              <td>{product.colour}</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Price</td>
+              <td>{product.price}</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Description</td>
+              <td>{product.description}</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>Category</td>
+              <td>{product.category}</td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>Rating</td>
+              <td>{product.rating}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
+
+    const review = this.state.review;
+    let reviewItems = review.map((rev) => {
+      return (
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Name</td>
-            <td>{ product.name }</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Brand</td>
-            <td>{ product.brand }</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Shade</td>
-            <td>{ product.colour }</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Price</td>
-            <td>{ product.price }</td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>Description</td>
-            <td>{ product.description }</td>
-          </tr>
-          <tr>
-            <th scope="row">6</th>
-            <td>Category</td>
-            <td>{ product.category }</td>
-          </tr>
-          <tr>
-            <th scope="row">7</th>
-            <td>Rating</td>
-            <td>{ product.rating }</td>
+            <td>{rev.user}</td>
+            <td>{rev.content}</td>
+            <td>{rev.rating}</td>
           </tr>
         </tbody>
-      </table>
-    </div>
+      );
+    });
 
-// const review = this.state.product.review[0];
-// let reviewItem = <div>
-//   <table className="table table-hover table-dark">
-//     {/* <thead>
-//       <tr>
-//         <th scope="col">#</th>
-//         <th scope="col">First</th>
-//         <th scope="col">Last</th>
-//         <th scope="col">Handle</th>
-//       </tr>
-//     </thead> */}
-//     <tbody>
-//       <tr>
-//         <th scope="row">1</th>
-//         <td>User</td>
-//         <td>{ product.review.user }</td>
-//       </tr>
-//       <tr>
-//         <th scope="row">2</th>
-//         <td>Content</td>
-//         <td>{ product.review.content }</td>
-//       </tr>
-//       <tr>
-//         <th scope="row">3</th>
-//         <td>Rating</td>
-//         <td>{ product.review.rating }</td>
-//       </tr>
-//     </tbody>
-//   </table>
-// </div>
-
-return (
-  <div className="ShowBookDetails">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-10 m-auto">
-          <br /> <br />
-        </div>
-        <br />
-        <div className="col-md-8 m-auto">
-          <h1 className="display-4 text-center">Products's Record</h1>
-          <p className="lead text-center">
-              View Products's Info
-          </p>
-          <hr /> <br />
-        </div>
-      </div>
-      <div>
-        { productItem }
-      </div>
-      <div>
-        <h2>Reviews & Ratings</h2>
-        <form noValidate onSubmit={this.onSubmit}>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    placeholder="Enter Your Name"
-                    name="user"
-                    className="form-control"
-                    value={this.state.user}
-                    onChange={this.onChange}
-                  />
-                </div>
-                <br />
-                <div className="form-group">
-                  <input
-                    type="text"
-                    placeholder="Add A Product Review"
-                    name="content"
-                    className="form-control"
-                    value={this.state.content}
-                    onChange={this.onChange}
-                  />
-                </div>
-                <br />
-                <div className="form-group">
-                  <label>
-                    Rate The Product:
-                    <select name="rating" value={this.state.rating} onChange={this.onChange}>
-                      <option value="☆☆☆☆☆">☆☆☆☆☆</option>
-                      <option value="★☆☆☆☆">★☆☆☆☆</option>
-                      <option value="★★☆☆☆">★★☆☆☆</option>
-                      <option value="★★★☆☆">★★★☆☆</option>
-                      <option value="★★★★☆">★★★★☆</option>
-                      <option value="★★★★★">★★★★★</option>
-                    </select>
-                  </label>
-                </div>
-                <br />
+    return (
+      <div className="ShowBookDetails">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-10 m-auto">
+              <br /> <br />
+            </div>
+            <br />
+            <div className="col-md-8 m-auto">
+              <h1 className="display-4 text-center">Products's Record</h1>
+              <p className="lead text-center">View Products's Info</p>
+              <hr /> <br />
+            </div>
+          </div>
+          <div>{productItem}</div>
+          <div>
+            <h2>Reviews & Ratings</h2>
+            <form noValidate onSubmit={this.onSubmit}>
+              <div className="form-group">
                 <input
-                  type="submit"
-                  className="btn btn-outline-warning btn-block mt-4"
+                  type="text"
+                  placeholder="Enter Your Name"
+                  name="user"
+                  className="form-control"
+                  value={this.state.user}
+                  onChange={this.onChange}
                 />
-              </form>
-      </div>
-      {/* <div>
-        {reviewItem}
-      </div> */}
+              </div>
+              <br />
+              <div className="form-group">
+                <input
+                  type="text"
+                  placeholder="Add A Product Review"
+                  name="content"
+                  className="form-control"
+                  value={this.state.content}
+                  onChange={this.onChange}
+                />
+              </div>
+              <br />
+              <div className="form-group">
+                <label>
+                  Rate The Product:
+                  <select
+                    name="rating"
+                    value={this.state.rating}
+                    onChange={this.onChange}
+                  >
+                    <option value="☆☆☆☆☆">☆☆☆☆☆</option>
+                    <option value="★☆☆☆☆">★☆☆☆☆</option>
+                    <option value="★★☆☆☆">★★☆☆☆</option>
+                    <option value="★★★☆☆">★★★☆☆</option>
+                    <option value="★★★★☆">★★★★☆</option>
+                    <option value="★★★★★">★★★★★</option>
+                  </select>
+                </label>
+              </div>
+              <br />
+              <input
+                type="submit"
+                className="btn btn-outline-warning btn-block mt-4"
+              />
+            </form>
+          </div>
+          <br></br>
+          <div></div>
 
-    </div>
-  </div>
-);
-}
+          <div>
+            <table className="table table-hover table-dark">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Review</th>
+                  <th>Rating</th>
+                </tr>
+              </thead>
+              {reviewItems}
+            </table>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default ProductsDetailPage;
