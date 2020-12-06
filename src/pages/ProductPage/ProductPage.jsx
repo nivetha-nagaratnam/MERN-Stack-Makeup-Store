@@ -1,11 +1,12 @@
 import React from 'react';
-import NavBar from '../../components/NavBar/NavBar';
+import Header from '../../components/Header/Header';
+// import NavBar from '../../components/NavBar/NavBar';
 // import './ProductPage.css';
 
 const ProductPage = (props) => {
   return (
     <div className="ProductPage">
-      <NavBar 
+      <Header 
       user={props.user}
       handleLogout={props.handleLogout}/>
     </div>

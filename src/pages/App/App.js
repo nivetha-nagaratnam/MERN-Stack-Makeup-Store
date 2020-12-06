@@ -4,8 +4,15 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import ProductPage from '../ProductPage/ProductPage';
 import userService from '../../utils/userService';
-import tokenService from '../../utils/tokenService';
+// import tokenService from '../../utils/tokenService';
 import './App.css';
+import CreateProduct from '../../components/CreateProduct/CreateProduct';
+import ViewProductsPage from '../../components/ViewProductsPage/ViewProductsPage';
+import ProductsDetailPage from '../../components/ProductsDetailPage/ProductsDetailPage';
+import LipProductsPage from '../../components/LipProductsPage/LipProductsPage';
+import EyeProductsPage from '../../components/EyeProductsPage/EyeProductsPage';
+import CheekProductsPage from '../../components/CheekProductsPage/CheekProductsPage'
+import FaceProductsPage from '../../components/FaceProductsPage/FaceProductsPage'
 
 class App extends Component {
   constructor() {
@@ -31,7 +38,6 @@ class App extends Component {
         user={this.state.user}
         handleLogout={this.handleLogout}
         />
-        <h1 className="App"> Welcome To Makeup Store</h1>
         <Switch>
         <Route exact path='/signup' render={({ history }) => 
             <SignupPage
@@ -45,6 +51,13 @@ class App extends Component {
             handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
+          <Route path='/create' component={CreateProduct} />
+          <Route exact path='/view-all-products' component={ViewProductsPage} />
+          <Route exact path='/view-lip-products' component={LipProductsPage} />
+          <Route exact path='/view-eye-products' component={EyeProductsPage} />
+          <Route exact path='/view-cheek-products' component={CheekProductsPage} />
+          <Route exact path='/view-face-products' component={FaceProductsPage} />
+          <Route exact path='/product-detail/:id' component={ProductsDetailPage} />
         </Switch>
       </div>
     );
