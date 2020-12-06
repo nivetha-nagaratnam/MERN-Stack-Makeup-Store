@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// const reviewSchema = new Schema({
-//   content: String,
-//   rating: {
-//     type: String,
-//   },
-//   user: String,
-// }, {
-//   timestamps: true
-// });
+const reviewSchema = new Schema({
+  content: String,
+  rating: {
+    type: String,
+  },
+  user: String,
+}, {
+  timestamps: true
+});
 
 // const userSchema = new Schema({ 
 //   name: String,
@@ -39,7 +39,7 @@ const productSchema = new Schema({
   colour: {
     type: String,
   },
-//   review:[reviewSchema],
+  review:[reviewSchema],
 //   img: [{type: Schema.Types.ObjectId, ref: 'Image'}],
 //   imgs: [{type: Schema.Types.ObjectId, ref: 'Dupe'}],
   category: {
