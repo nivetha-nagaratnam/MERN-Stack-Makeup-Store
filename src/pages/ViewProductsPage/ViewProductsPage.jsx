@@ -27,7 +27,6 @@ class ViewProductsPage extends Component {
 
   render() {
     const products = this.state.products;
-    console.log("PrintProduct: " + products);
     let productList;
 
     if(!products) {
@@ -36,6 +35,7 @@ class ViewProductsPage extends Component {
         productList = products.map((product, k) =>
         <ProductCard product={product} key={k} history={this.props.history}/>
       );
+    
     }
 
     return (

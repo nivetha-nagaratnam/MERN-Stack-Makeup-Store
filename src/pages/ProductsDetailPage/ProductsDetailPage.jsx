@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
-import axios from 'axios';
-import katvond_liner from '../../images/katvond-eyeliner.png'
-import better_than_s from '../../images/twoface-mascara.png'
-import flyliner from '../../images/fenty-eyeliner.png'
-import laura_powder from '../../images/laura-powder.png'
-import nars_concealer from '../../images/nars-concealor.png'
-import fenty_highlighter from '../../images/fenty-highlighter.jpeg'
-import hoola_bronzer from '../../images/benefit- bronzer.jpeg'
-import tarte_blush from '../../images/tarte- blush.jpeg'
-import kylie_gloss from '../../images/kylie- lip gloss.jpeg'
-import fenty_gloss from '../../images/fenty-lip gloss.jpeg'
-import mac_lipstick from '../../images/mac- lipstick.jpeg'
+import React, { Component } from "react";
+import axios from "axios";
+import { Link } from 'react-router-dom';
+import katvond_liner from "../../images/katvond-eyeliner.png";
+import better_than_s from "../../images/twoface-mascara.png";
+import flyliner from "../../images/fenty-eyeliner.png";
+import laura_powder from "../../images/laura-powder.png";
+import nars_concealer from "../../images/nars-concealor.png";
+import fenty_highlighter from "../../images/fenty-highlighter.jpeg";
+import hoola_bronzer from "../../images/benefit- bronzer.jpeg";
+import tarte_blush from "../../images/tarte- blush.jpeg";
+import kylie_gloss from "../../images/kylie- lip gloss.jpeg";
+import fenty_gloss from "../../images/fenty-lip gloss.jpeg";
+import mac_lipstick from "../../images/mac- lipstick.jpeg";
 
 class ProductsDetailPage extends Component {
   constructor(props) {
@@ -22,6 +22,9 @@ class ProductsDetailPage extends Component {
       user: "",
       content: "",
       rating: "",
+      dupe: [],
+      name: "",
+      price: "",
     };
   }
 
@@ -47,6 +50,7 @@ class ProductsDetailPage extends Component {
       )
       .then((res) => {
         this.setState({
+          ...this.state,
           user: "",
           content: "",
           rating: "",
@@ -59,6 +63,35 @@ class ProductsDetailPage extends Component {
       });
   };
 
+  onSubmit1 = (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: this.state.name,
+      price: this.state.price,
+    };
+
+    axios
+      .post(
+        "http://localhost:3000/api/dupes/products/" +
+          this.props.match.params.id +
+          "/dupes",
+        data
+      )
+      .then((res) => {
+        this.setState({
+          ...this.state,
+          name: "",
+          price: "",
+        });
+        //redirect
+        // this.props.history.push("/");
+      })
+      .catch((err) => {
+        console.log("Error in CreateDupe!");
+      });
+  };
+
   componentDidMount() {
     axios
       .get("http://localhost:3000/api/products/" + this.props.match.params.id)
@@ -66,6 +99,7 @@ class ProductsDetailPage extends Component {
         this.setState({
           product: res.data,
           review: Object.values(res.data.review) || null,
+          dupe: Object.values(res.data.dupe) || null,
         });
       })
       .catch((err) => {
@@ -140,56 +174,38 @@ class ProductsDetailPage extends Component {
       );
     });
 
-    let image = ""
+    let image = "";
 
-    if (this.state.product.name === "Tattoo Eyeliner" ) {
-       image = (
-        < img src={katvond_liner} alt="hellp" />
-      )
-    } else if (this.state.product.name ===  "Better Than Sex Mascara" ){
-      image = (
-        < img src={better_than_s} alt="hellp" />
-      )
-    } else if (this.state.product.name ===  "Flyliner Longwear Liquid Eyeliner" ){
-      image = (
-        < img src={flyliner} alt="hellp" />
-      )
-    } else if (this.state.product.name ===  "Translucent Loose Setting Powder" ){
-      image = (
-        < img src={laura_powder} alt="hellp" />
-      )
-    } else if (this.state.product.name ===  "Radiant Creamy Concealer" ){
-      image = (
-        < img src={nars_concealer} alt="hellp" />
-      )
-    } else if (this.state.product.name ===  "Killawatt Freestyle Highlighter" ){
-      image = (
-        < img src={fenty_highlighter} alt="hellp" />
-      )
-    } else if (this.state.product.name ===  "Hoola Matte Bronzer" ){
-      image = (
-        < img src={hoola_bronzer} alt="hellp" />
-      )
-    } else if (this.state.product.name ===  "Amazonian Clay 12-Hour Blush" ){
-      image = (
-        < img src={tarte_blush} alt="hellp" />
-      )
-    } else if (this.state.product.name ===  "High Gloss" ){
-      image = (
-        < img src={kylie_gloss} alt="hellp" />
-      )
-    } else if (this.state.product.name ===  "Gloss Bomb Universal Lip Luminizer" ){
-      image = (
-        < img src={fenty_gloss} alt="hellp" />
-      )
-    } else if (this.state.product.name ===  "Matte Lipstick" ){
-      image = (
-        < img src={mac_lipstick} alt="hellp" />
-      )
-    } else  {
-      image = ""
+    if (this.state.product.name === "Tattoo Eyeliner") {
+      image = <img src={katvond_liner} alt="liner" />;
+    } else if (this.state.product.name === "Better Than Sex Mascara") {
+      image = <img src={better_than_s} alt="mascaras" />;
+    } else if (
+      this.state.product.name === "Flyliner Longwear Liquid Eyeliner"
+    ) {
+      image = <img src={flyliner} alt="liner" />;
+    } else if (this.state.product.name === "Translucent Loose Setting Powder") {
+      image = <img src={laura_powder} alt="powder" />;
+    } else if (this.state.product.name === "Radiant Creamy Concealer") {
+      image = <img src={nars_concealer} alt="concealer" />;
+    } else if (this.state.product.name === "Killawatt Freestyle Highlighter") {
+      image = <img src={fenty_highlighter} alt="highlighter" />;
+    } else if (this.state.product.name === "Hoola Matte Bronzer") {
+      image = <img src={hoola_bronzer} alt="bronzer" />;
+    } else if (this.state.product.name === "Amazonian Clay 12-Hour Blush") {
+      image = <img src={tarte_blush} alt="blush" />;
+    } else if (this.state.product.name === "High Gloss") {
+      image = <img src={kylie_gloss} alt="liner" />;
+    } else if (
+      this.state.product.name === "Gloss Bomb Universal Lip Luminizer"
+    ) {
+      image = <img src={fenty_gloss} alt="lipgloss" />;
+    } else if (this.state.product.name === "Matte Lipstick") {
+      image = <img src={mac_lipstick} alt="lipstick" />;
+    } else {
+      image = "";
     }
-  
+
     return (
       <div className="ShowBookDetails">
         <div className="container">
@@ -201,9 +217,10 @@ class ProductsDetailPage extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Products's Record</h1>
               <p className="lead text-center">View Products's Info</p>
+              {image}
               <hr /> <br />
             </div>
-          </div>    
+          </div>
           <div>{productItem}</div>
           <div>
             <h2>Reviews & Ratings</h2>
@@ -269,9 +286,36 @@ class ProductsDetailPage extends Component {
               {reviewItems}
             </table>
           </div>
-        </div>
-        <div>
-        {image}
+
+          <h2>Dupes</h2>
+          <form noValidate onSubmit={this.onSubmit1}>
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="Enter Dupe Name"
+                name="name"
+                className="form-control"
+                value={this.state.name}
+                onChange={this.onChange}
+              />
+            </div>
+            <br />
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="Add Dupe Price"
+                name="price"
+                className="form-control"
+                value={this.state.price}
+                onChange={this.onChange}
+              />
+            </div>
+            <input
+              type="submit"
+              className="btn btn-outline-warning btn-block mt-4"
+            />
+          </form>
+          <Link to={`/product-detail/${product._id}/dupes/show`} className='NavBar-link'>View All Dupes</Link>
         </div>
       </div>
     );

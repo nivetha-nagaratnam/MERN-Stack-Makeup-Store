@@ -11,13 +11,22 @@ const reviewSchema = new Schema({
   timestamps: true
 });
 
-// const userSchema = new Schema({ 
-//   name: String,
-//   email: String,
-//   googleId: String,
-// }, {
-//   timestamps: true
-// }); 
+const dupeSchema = new Schema({ 
+  name: {
+      type:String,
+      required: true,
+  },
+  price: {
+      type:Number,
+      required: true,
+  },
+  imgs: {
+      data: Buffer, 
+      contentType: String 
+    },
+}, {
+  timestamps: true
+}); 
 
 const productSchema = new Schema({
   name: {
@@ -41,7 +50,8 @@ const productSchema = new Schema({
   },
   review:[reviewSchema],
   img: [{type: Schema.Types.ObjectId, ref: 'Image'}],
-//   imgs: [{type: Schema.Types.ObjectId, ref: 'Dupe'}],
+  imgs: [{type: Schema.Types.ObjectId, ref: 'Dupe'}],
+  dupe:[dupeSchema],
   category: {
     type: String,
   }

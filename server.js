@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/products', require('./routes/api/products'));
 app.use('/api/reviews', require('./routes/api/reviews'));
+app.use('/api/dupes', require('./routes/api/dupes'));
 
 
 
@@ -34,7 +35,7 @@ app.get('/*', function(req, res) {
 
 // Configure to use port 3001 instead of 3000 during
 // development to avoid collision with React's dev server
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3003;
 
 app.listen(port, function() {
   console.log(`Express app running on port ${port}`)

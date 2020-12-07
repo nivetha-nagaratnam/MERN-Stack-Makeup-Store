@@ -8,6 +8,7 @@ import userService from '../../utils/userService';
 import './App.css';
 import CreateProduct from '../../components/CreateProduct/CreateProduct';
 import ViewProductsPage from '../ViewProductsPage/ViewProductsPage';
+import ViewDupesPage from '../ViewDupesPage/ViewDupesPage';
 import ProductsDetailPage from '../ProductsDetailPage/ProductsDetailPage';
 import LipProductsPage from '../LipProductsPage/LipProductsPage';
 import EyeProductsPage from '../EyeProductsPage/EyeProductsPage';
@@ -58,6 +59,7 @@ class App extends Component {
           />
           <Route path="/create" component={CreateProduct} />
           <Route exact path="/view-all-products" component={ViewProductsPage} />
+          <Route exact path="/product-detail/:id/dupes/show"  component={ViewDupesPage} />
           <Route exact path="/view-lip-products" component={LipProductsPage} />
           <Route exact path="/view-eye-products" component={EyeProductsPage} />
           <Route
