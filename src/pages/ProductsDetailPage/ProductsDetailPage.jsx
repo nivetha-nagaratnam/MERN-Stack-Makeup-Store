@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import axios from 'axios';
+import katvond_liner from '../../images/katvond-eyeliner.png'
+import better_than_s from '../../images/twoface-mascara.png'
+import flyliner from '../../images/fenty-eyeliner.png'
+import laura_powder from '../../images/laura-powder.png'
+import nars_concealer from '../../images/nars-concealor.png'
+import fenty_highlighter from '../../images/fenty-highlighter.jpeg'
+import hoola_bronzer from '../../images/benefit- bronzer.jpeg'
+import tarte_blush from '../../images/tarte- blush.jpeg'
+import kylie_gloss from '../../images/kylie- lip gloss.jpeg'
+import fenty_gloss from '../../images/fenty-lip gloss.jpeg'
+import mac_lipstick from '../../images/mac- lipstick.jpeg'
 
 class ProductsDetailPage extends Component {
   constructor(props) {
@@ -129,6 +140,56 @@ class ProductsDetailPage extends Component {
       );
     });
 
+    let image = ""
+
+    if (this.state.product.name === "Tattoo Eyeliner" ) {
+       image = (
+        < img src={katvond_liner} alt="hellp" />
+      )
+    } else if (this.state.product.name ===  "Better Than Sex Mascara" ){
+      image = (
+        < img src={better_than_s} alt="hellp" />
+      )
+    } else if (this.state.product.name ===  "Flyliner Longwear Liquid Eyeliner" ){
+      image = (
+        < img src={flyliner} alt="hellp" />
+      )
+    } else if (this.state.product.name ===  "Translucent Loose Setting Powder" ){
+      image = (
+        < img src={laura_powder} alt="hellp" />
+      )
+    } else if (this.state.product.name ===  "Radiant Creamy Concealer" ){
+      image = (
+        < img src={nars_concealer} alt="hellp" />
+      )
+    } else if (this.state.product.name ===  "Killawatt Freestyle Highlighter" ){
+      image = (
+        < img src={fenty_highlighter} alt="hellp" />
+      )
+    } else if (this.state.product.name ===  "Hoola Matte Bronzer" ){
+      image = (
+        < img src={hoola_bronzer} alt="hellp" />
+      )
+    } else if (this.state.product.name ===  "Amazonian Clay 12-Hour Blush" ){
+      image = (
+        < img src={tarte_blush} alt="hellp" />
+      )
+    } else if (this.state.product.name ===  "High Gloss" ){
+      image = (
+        < img src={kylie_gloss} alt="hellp" />
+      )
+    } else if (this.state.product.name ===  "Gloss Bomb Universal Lip Luminizer" ){
+      image = (
+        < img src={fenty_gloss} alt="hellp" />
+      )
+    } else if (this.state.product.name ===  "Matte Lipstick" ){
+      image = (
+        < img src={mac_lipstick} alt="hellp" />
+      )
+    } else  {
+      image = ""
+    }
+  
     return (
       <div className="ShowBookDetails">
         <div className="container">
@@ -142,7 +203,7 @@ class ProductsDetailPage extends Component {
               <p className="lead text-center">View Products's Info</p>
               <hr /> <br />
             </div>
-          </div>
+          </div>    
           <div>{productItem}</div>
           <div>
             <h2>Reviews & Ratings</h2>
@@ -208,6 +269,9 @@ class ProductsDetailPage extends Component {
               {reviewItems}
             </table>
           </div>
+        </div>
+        <div>
+        {image}
         </div>
       </div>
     );

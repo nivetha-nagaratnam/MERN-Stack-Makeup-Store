@@ -40,7 +40,7 @@ const productSchema = new Schema({
     type: String,
   },
   review:[reviewSchema],
-//   img: [{type: Schema.Types.ObjectId, ref: 'Image'}],
+  img: [{type: Schema.Types.ObjectId, ref: 'Image'}],
 //   imgs: [{type: Schema.Types.ObjectId, ref: 'Dupe'}],
   category: {
     type: String,

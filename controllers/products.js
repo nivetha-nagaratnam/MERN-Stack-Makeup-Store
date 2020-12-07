@@ -1,42 +1,5 @@
 const Product = require('../models/product');
 
-// function show(req, res) {
-//   Product.findById(req.params.id).populate('img').exec(function(err, product) {
-//     res.render('products/show', { title: 'Product Detail', product, user: req.user, name: req.query.name});
-//   });
-// }
-
-// function index(req, res) {
-//   Product.find({}).populate('img').exec( function(err, product) {
-//     res.render('products/index',{ title: 'All Products', product, user: req.user, name: req.query.name});
-//   });
-// }
-
-// function indexLips(req, res) {
-//   Product.find({category: 'lips'}).populate('img').exec(function(err, product) {
-//     res.render('products/lips', { title: 'Lip Products', product, user: req.user, name: req.query.name});
-//   });
-// }
-
-// function indexFace(req, res) {
-//   Product.find({category: 'face'}).populate('img').exec(function(err, product) {
-//     res.render('products/face', { title: 'Face Products', product, user: req.user, name: req.query.name});
-//   });
-// }
-
-// function indexCheeks(req, res) {
-//   Product.find({category: 'cheeks'}).populate('img').exec(function(err, product) {
-//     res.render('products/cheeks', { title: 'Cheek Products', product, user: req.user, name: req.query.name});
-//   });
-// }
-
-// function indexEyes(req, res) {
-//   Product.find({category: 'eyes'}).populate('img').exec(function(err, product) {
-//     res.render('products/eyes', { title: 'Eye Products', product, user: req.user, name: req.query.name});
-//   });
-// }
-
-
 async function create(req, res) {
   Product.create(req.body)
     .then(product => res.json())
