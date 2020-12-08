@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ProductCard from '../../components/ProductCard/ProductCard';
+import tokenService from "../../utils/tokenService";
 
 class FaceProductsPage extends Component {
     constructor(props) {
@@ -12,7 +13,11 @@ class FaceProductsPage extends Component {
     
       componentDidMount() {
         axios
-          .get('http://localhost:3000/api/products/face')
+          .get('http://localhost:3000/api/products/face', {
+            headers: {
+              'Authorization': 'Bearer ' + tokenService.getToken()
+            }
+          })
           .then(res => {
             this.setState({
                 products: res.data

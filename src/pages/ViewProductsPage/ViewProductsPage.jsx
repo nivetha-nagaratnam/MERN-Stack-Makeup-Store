@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
+import tokenService from "../../utils/tokenService";
 
 class ViewProductsPage extends Component {
   constructor(props) {
@@ -13,7 +14,11 @@ class ViewProductsPage extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:3000/api/products')
+      .get('http://localhost:3000/api/products', {
+        headers: {
+          'Authorization': 'Bearer ' + tokenService.getToken()
+        }
+      })
       .then(res => {
         this.setState({
             products: res.data
