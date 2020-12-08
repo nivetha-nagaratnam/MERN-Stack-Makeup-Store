@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import katvond_liner from "../../images/katvond-eyeliner.png";
 import better_than_s from "../../images/twoface-mascara.png";
 import flyliner from "../../images/fenty-eyeliner.png";
@@ -12,7 +12,8 @@ import tarte_blush from "../../images/tarte- blush.jpeg";
 import kylie_gloss from "../../images/kylie- lip gloss.jpeg";
 import fenty_gloss from "../../images/fenty-lip gloss.jpeg";
 import mac_lipstick from "../../images/mac- lipstick.jpeg";
-
+import "./ProductsDetailPage.css";
+import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 class ProductsDetailPage extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +26,14 @@ class ProductsDetailPage extends Component {
       dupe: [],
       name: "",
       price: "",
+      modal: false
     };
+  }
+
+  toggle = () => {
+    this.setState({
+      modal: !this.state.modal
+    });
   }
 
   onChange = (event) => {
@@ -108,58 +116,60 @@ class ProductsDetailPage extends Component {
   }
 
   render() {
+    // const product = this.state.product;
+    // let productItem = (
+    //   <div>
+    //     <table className="table table-hover table-dark">
+    //       {/* <thead>
+    //       <tr>
+    //         <th scope="col">#</th>
+    //         <th scope="col">First</th>
+    //         <th scope="col">Last</th>
+    //         <th scope="col">Handle</th>
+    //       </tr>
+    //     </thead> */}
+    //       <tbody>
+    //         <tr>
+    //           <th scope="row">1</th>
+    //           <td>Name</td>
+    //           <td>{product.name}</td>
+    //         </tr>
+    //         <tr>
+    //           <th scope="row">2</th>
+    //           <td>Brand</td>
+    //           <td>{product.brand}</td>
+    //         </tr>
+    //         <tr>
+    //           <th scope="row">3</th>
+    //           <td>Shade</td>
+    //           <td>{product.colour}</td>
+    //         </tr>
+    //         <tr>
+    //           <th scope="row">4</th>
+    //           <td>Price</td>
+    //           <td>{product.price}</td>
+    //         </tr>
+    //         <tr>
+    //           <th scope="row">5</th>
+    //           <td>Description</td>
+    //           <td>{product.description}</td>
+    //         </tr>
+    //         <tr>
+    //           <th scope="row">6</th>
+    //           <td>Category</td>
+    //           <td>{product.category}</td>
+    //         </tr>
+    //         <tr>
+    //           <th scope="row">7</th>
+    //           <td>Rating</td>
+    //           <td>{product.rating}</td>
+    //         </tr>
+    //       </tbody>
+    //     </table>
+    //   </div>
+    // );
+
     const product = this.state.product;
-    let productItem = (
-      <div>
-        <table className="table table-hover table-dark">
-          {/* <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead> */}
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Name</td>
-              <td>{product.name}</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Brand</td>
-              <td>{product.brand}</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Shade</td>
-              <td>{product.colour}</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Price</td>
-              <td>{product.price}</td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>Description</td>
-              <td>{product.description}</td>
-            </tr>
-            <tr>
-              <th scope="row">6</th>
-              <td>Category</td>
-              <td>{product.category}</td>
-            </tr>
-            <tr>
-              <th scope="row">7</th>
-              <td>Rating</td>
-              <td>{product.rating}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    );
 
     const review = this.state.review;
     let reviewItems = review.map((rev) => {
@@ -207,117 +217,320 @@ class ProductsDetailPage extends Component {
     }
 
     return (
-      <div className="ShowBookDetails">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-10 m-auto">
-              <br /> <br />
-            </div>
-            <br />
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Products's Record</h1>
-              <p className="lead text-center">View Products's Info</p>
-              {image}
-              <hr /> <br />
-            </div>
+      // <div className="ShowBookDetails">
+      //   <div className="container">
+      //     <div className="row">
+      //       <div className="col-md-10 m-auto">
+      //         <br /> <br />
+      //       </div>
+      //       <br />
+      //       <div className="col-md-8 m-auto">
+      //         <h1 className="display-4 text-center">Products's Record</h1>
+      //         <p className="lead text-center">View Products's Info</p>
+      //         {image}
+      //         <hr /> <br />
+      //       </div>
+      //     </div>
+      //     <div>{productItem}</div>
+      //     <div>
+      //       <h2>Reviews & Ratings</h2>
+      //       <form noValidate onSubmit={this.onSubmit}>
+      //         <div className="form-group">
+      //           <input
+      //             type="text"
+      //             placeholder="Enter Your Name"
+      //             name="user"
+      //             className="form-control"
+      //             value={this.state.user}
+      //             onChange={this.onChange}
+      //           />
+      //         </div>
+      //         <br />
+      //         <div className="form-group">
+      //           <input
+      //             type="text"
+      //             placeholder="Add A Product Review"
+      //             name="content"
+      //             className="form-control"
+      //             value={this.state.content}
+      //             onChange={this.onChange}
+      //           />
+      //         </div>
+      //         <br />
+      //         <div className="form-group">
+      //           <label>
+      //             Rate The Product:
+      //             <select
+      //               name="rating"
+      //               value={this.state.rating}
+      //               onChange={this.onChange}
+      //             >
+      //               <option value="☆☆☆☆☆">☆☆☆☆☆</option>
+      //               <option value="★☆☆☆☆">★☆☆☆☆</option>
+      //               <option value="★★☆☆☆">★★☆☆☆</option>
+      //               <option value="★★★☆☆">★★★☆☆</option>
+      //               <option value="★★★★☆">★★★★☆</option>
+      //               <option value="★★★★★">★★★★★</option>
+      //             </select>
+      //           </label>
+      //         </div>
+      //         <br />
+      //         <input
+      //           type="submit"
+      //           className="btn btn-outline-warning btn-block mt-4"
+      //         />
+      //       </form>
+      //     </div>
+      //     <br></br>
+      //     <div></div>
+
+      //     <div>
+      //       <table className="table table-hover table-dark">
+      //         <thead>
+      //           <tr>
+      //             <th>User</th>
+      //             <th>Review</th>
+      //             <th>Rating</th>
+      //           </tr>
+      //         </thead>
+      //         {reviewItems}
+      //       </table>
+      //     </div>
+
+      // <h2>Dupes</h2>
+      // <form noValidate onSubmit={this.onSubmit1}>
+      //   <div className="form-group">
+      //     <input
+      //       type="text"
+      //       placeholder="Enter Dupe Name"
+      //       name="name"
+      //       className="form-control"
+      //       value={this.state.name}
+      //       onChange={this.onChange}
+      //     />
+      //   </div>
+      //   <br />
+      //   <div className="form-group">
+      //     <input
+      //       type="text"
+      //       placeholder="Add Dupe Price"
+      //       name="price"
+      //       className="form-control"
+      //       value={this.state.price}
+      //       onChange={this.onChange}
+      //     />
+      //   </div>
+      //   <input
+      //     type="submit"
+      //     className="btn btn-outline-warning btn-block mt-4"
+      //   />
+      // </form>
+      //     <Link to={`/product-detail/${product._id}/dupes/show`} className='NavBar-link'>View All Dupes</Link>
+      //   </div>
+      // </div>
+      <React.Fragment>
+        <main className="container">
+          <div className="left-side">
+                <div className="image_product">{image}</div>
           </div>
-          <div>{productItem}</div>
-          <div>
-            <h2>Reviews & Ratings</h2>
-            <form noValidate onSubmit={this.onSubmit}>
-              <div className="form-group">
-                <input
-                  type="text"
-                  placeholder="Enter Your Name"
-                  name="user"
-                  className="form-control"
-                  value={this.state.user}
-                  onChange={this.onChange}
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <input
-                  type="text"
-                  placeholder="Add A Product Review"
-                  name="content"
-                  className="form-control"
-                  value={this.state.content}
-                  onChange={this.onChange}
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <label>
-                  Rate The Product:
-                  <select
-                    name="rating"
-                    value={this.state.rating}
-                    onChange={this.onChange}
+
+          <div className="right-side">
+            <div className="product-header">
+              <h3>{product.brand}</h3>
+              <h2>{product.name}</h2>
+              <p>{product.rating}</p>
+            </div>
+
+            <div className="product-body">
+              <p> Shade: {product.colour}</p>
+              <p>{product.description}</p>
+            </div>
+
+            <div className="product-links">
+              <div className="links">
+                <MDBContainer>
+                  <MDBBtn onClick={this.toggle} color="dark">
+                    ADD A DUPE
+                  </MDBBtn>
+                  <h3 >
+                  <Link
+                    to={`/product-detail/${product._id}/dupes/show`}
+                    className="btn btn-dark btn-rounded mb-4"
                   >
-                    <option value="☆☆☆☆☆">☆☆☆☆☆</option>
-                    <option value="★☆☆☆☆">★☆☆☆☆</option>
-                    <option value="★★☆☆☆">★★☆☆☆</option>
-                    <option value="★★★☆☆">★★★☆☆</option>
-                    <option value="★★★★☆">★★★★☆</option>
-                    <option value="★★★★★">★★★★★</option>
-                  </select>
-                </label>
+                    View All Dupes
+                  </Link>
+                </h3>
+                  <MDBModal
+                    isOpen={this.state.modal}
+                    fade={false}
+                    toggle={this.toggle}
+                  >
+                    <MDBModalHeader toggle={this.toggle}>
+                      MDBModal title
+                    </MDBModalHeader>
+                    <MDBModalBody>
+                      <form noValidate onSubmit={this.onSubmit1}>
+                        <div className="modal-body mx-3">
+                          <div className="md-form mb-5">
+                            <i className="fas fa-cart-plus prefix grey-text"></i>
+                            <input
+                              type="text"
+                              placeholder="Enter Dupe Name"
+                              name="name"
+                              classNameName="form-control"
+                              value={this.state.name}
+                              onChange={this.onChange}
+                            />
+                            <label
+                              data-error="wrong"
+                              data-success="right"
+                              for="orangeForm-name"
+                            ></label>
+                          </div>
+                          <div className="md-form mb-5">
+                            <i className="fas fa-dollar-sign prefix grey-text"></i>
+                            <input
+                              type="text"
+                              placeholder="Add Dupe Price"
+                              name="price"
+                              classNameName="form-control"
+                              value={this.state.price}
+                              onChange={this.onChange}
+                            />
+                            <label
+                              data-error="wrong"
+                              data-success="right"
+                              for="form32"
+                            ></label>
+                          </div>
+                          <div className="modal-footer d-flex justify-content-center">
+                            <button className="btn btn-dark" type="submit">
+                              Submit
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </MDBModalBody>
+                    <MDBModalFooter>
+                      <MDBBtn color="dark" onClick={this.toggle}>
+                        Close
+                      </MDBBtn>
+                    </MDBModalFooter>
+                  </MDBModal>
+                </MDBContainer>
               </div>
-              <br />
-              <input
-                type="submit"
-                className="btn btn-outline-warning btn-block mt-4"
-              />
-            </form>
-          </div>
-          <br></br>
-          <div></div>
-
-          <div>
-            <table className="table table-hover table-dark">
-              <thead>
-                <tr>
-                  <th>User</th>
-                  <th>Review</th>
-                  <th>Rating</th>
-                </tr>
-              </thead>
-              {reviewItems}
-            </table>
-          </div>
-
-          <h2>Dupes</h2>
-          <form noValidate onSubmit={this.onSubmit1}>
-            <div className="form-group">
-              <input
-                type="text"
-                placeholder="Enter Dupe Name"
-                name="name"
-                className="form-control"
-                value={this.state.name}
-                onChange={this.onChange}
-              />
             </div>
-            <br />
-            <div className="form-group">
-              <input
-                type="text"
-                placeholder="Add Dupe Price"
-                name="price"
-                className="form-control"
-                value={this.state.price}
-                onChange={this.onChange}
-              />
+
+            <div className="price">
+              <span>${product.price}</span>
             </div>
-            <input
-              type="submit"
-              className="btn btn-outline-warning btn-block mt-4"
-            />
-          </form>
-          <Link to={`/product-detail/${product._id}/dupes/show`} className='NavBar-link'>View All Dupes</Link>
+          </div>
+        </main>
+
+        <div className="line"></div>
+        <br></br>
+        <br></br>
+        <h4 className="rating-title">Rate & Review The Product</h4>
+        
+        <div>
+          <span>
+            <h3 className="rate-link">
+              <MDBContainer>
+                <MDBBtn onClick={this.toggle} color="dark">
+                  RATE & REVIEW
+                </MDBBtn>
+                <MDBModal
+                  isOpen={this.state.modal}
+                  fade={false}
+                  toggle={this.toggle}
+                >
+                  <MDBModalHeader toggle={this.toggle}>
+                    Ratings & Review
+                  </MDBModalHeader>
+                  <MDBModalBody>
+                    <form noValidate onSubmit={this.onSubmit}>
+                      <div className="modal-body mx-3">
+                        <div className="md-form mb-4">
+                          <div className="md-form mb-4">
+                            <input
+                              type="text"
+                              placeholder="Enter Your Name"
+                              name="user"
+                              className="form-control"
+                              value={this.state.user}
+                              onChange={this.onChange}
+                            />
+                            <label
+                              data-error="wrong"
+                              data-success="right"
+                              for="form32"
+                            ></label>
+                          </div>
+                          <input
+                            type="text"
+                            placeholder="Add A Product Review"
+                            name="content"
+                            className="form-control"
+                            value={this.state.content}
+                            onChange={this.onChange}
+                          />
+                          <label
+                            data-error="wrong"
+                            data-success="right"
+                            for="form32"
+                          ></label>
+                        </div>
+                        <div className="md-form mb-5">
+                          <select
+                            name="rating"
+                            value={this.state.rating}
+                            onChange={this.onChange}
+                          >
+                            <option value="☆☆☆☆☆">☆☆☆☆☆</option>
+                            <option value="★☆☆☆☆">★☆☆☆☆</option>
+                            <option value="★★☆☆☆">★★☆☆☆</option>
+                            <option value="★★★☆☆">★★★☆☆</option>
+                            <option value="★★★★☆">★★★★☆</option>
+                            <option value="★★★★★">★★★★★</option>
+                          </select>
+                          <label
+                            data-error="wrong"
+                            data-success="right"
+                            for="form32"
+                          ></label>
+                        </div>
+                      </div>
+                      <div className="modal-footer d-flex justify-content-center">
+                        <button className="btn btn-dark" type="submit">
+                          Submit
+                        </button>
+                      </div>
+                    </form>
+                  </MDBModalBody>
+                  <MDBModalFooter>
+                    <MDBBtn color="dark" onClick={this.toggle}>
+                      Close
+                    </MDBBtn>
+                  </MDBModalFooter>
+                </MDBModal>
+              </MDBContainer>
+            </h3>
+          </span>
         </div>
-      </div>
+
+        <div className="col-md-10">
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Review</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            {reviewItems}
+          </table>
+        </div>
+      </React.Fragment>
     );
   }
 }

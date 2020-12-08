@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './DupeCard.css';
 
 class DupeCard extends Component {
 
@@ -18,29 +19,34 @@ class DupeCard extends Component {
   render() {
     const  product  = this.props.product;
     return (
-      <div className="card-container">
-        <div className="desc">
-          <h2>{product.name}</h2>
-          <p>${product.price}</p>
+      // <div className="card-container">
+      //   <div className="desc">
+      //     <h2>{product.name}</h2>
+      //     <p>${product.price}</p>
+      //     <div className="row">
+      //       <div className="col-md-6">
+      //         <br />
+      //       </div>
+      //     </div>
+      //   </div>
+      // </div>
+
+
+<div className="grid">
+        <div className="row row-cols-1 row-cols-md-3">
           <div className="row">
-            <div className="col-md-6">
-              {/* <Link to={`/product-detail/${product._id}`}>
-                <button
-                  type="button"
-                  className="btn btn-outline-danger btn-lg btn-block"
-                >
-                  <p>Details</p>
-                </button>
-              </Link> */}
-              <br />
-              {/* <button
-                type="button"
-                className="btn btn-outline-danger btn-lg btn-block"
-                onClick={this.onDeleteClick.bind(this, product._id)}
-              >
-                Delete Product
-              </button> */}
-              <br />
+            <div className="col-mb-4">
+              <div className="card-deck">
+                <div classNameName="view overlay">
+                  <div classNameName="card-body">
+                    <p className="card-text">{product.name}</p>
+                    <p className="card-text">${product.price}</p>
+                    <p className="card-text">{product.rating}</p>
+                  </div>
+                  <div className="card-footer">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
