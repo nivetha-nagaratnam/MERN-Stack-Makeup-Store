@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 
+
 const NavBar = (props) => {
   let nav = props.user ?
     <div>
       <Link to='' className='NavBar-link' onClick={props.handleLogout}>LOG OUT</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <Link to='/' className='NavBar-link'>Home Page</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='/create' className='NavBar-link'>Add A Product</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -22,6 +25,8 @@ const NavBar = (props) => {
       <Link to='/view-face-products' className='NavBar-link'>View Face Products</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='/cart' className='NavBar-link'>Cart</Link>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+
     </div>
     :
     <div>

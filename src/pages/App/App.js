@@ -16,6 +16,7 @@ import CheekProductsPage from '../CheekProductsPage/CheekProductsPage'
 import FaceProductsPage from '../FaceProductsPage/FaceProductsPage'
 import CartPage from '../CartPage/CartPage'
 
+
 class App extends Component {
   constructor(props) {
     super(props);

@@ -18,13 +18,10 @@ const dupeSchema = new Schema({
   price: {
       type:Number,
   },
-  // imgs: {
-  //     data: Buffer, 
-  //     contentType: String 
-  //   },
-  image:  {
-      type: String,
-  }
+  imgs: {
+      data: Buffer, 
+      contentType: String 
+    },
 }, {
   timestamps: true
 }); 

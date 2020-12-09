@@ -17,8 +17,6 @@ app.use(express.json());
 
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
-app.use('/files', express.static("files"));
-
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
@@ -26,7 +24,6 @@ app.use('/api/products', require('./routes/api/products'));
 app.use('/api/reviews', require('./routes/api/reviews'));
 app.use('/api/dupes', require('./routes/api/dupes'));
 app.use('/api/cart', require('./routes/api/carts'));
-
 
 
 // The following "catch all" route (note the *)is necessary
