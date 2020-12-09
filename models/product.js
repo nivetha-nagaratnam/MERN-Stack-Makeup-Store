@@ -14,16 +14,17 @@ const reviewSchema = new Schema({
 const dupeSchema = new Schema({ 
   name: {
       type:String,
-      required: true,
   },
   price: {
       type:Number,
-      required: true,
   },
-  imgs: {
-      data: Buffer, 
-      contentType: String 
-    },
+  // imgs: {
+  //     data: Buffer, 
+  //     contentType: String 
+  //   },
+  image:  {
+      type: String,
+  }
 }, {
   timestamps: true
 }); 

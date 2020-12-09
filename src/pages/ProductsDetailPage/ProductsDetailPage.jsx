@@ -26,7 +26,9 @@ class ProductsDetailPage extends Component {
       dupe: [],
       name: "",
       price: "",
+      image:"",
       modal: false,
+      modal1: false,
     };
   }
 
@@ -48,6 +50,12 @@ class ProductsDetailPage extends Component {
   toggle = () => {
     this.setState({
       modal: !this.state.modal,
+    });
+  };
+
+  toggle1 = () => {
+    this.setState({
+      modal1: !this.state.modal1,
     });
   };
 
@@ -92,6 +100,7 @@ class ProductsDetailPage extends Component {
     const data = {
       name: this.state.name,
       price: this.state.price,
+      image: this.state.image,
     };
 
     axios
@@ -106,6 +115,7 @@ class ProductsDetailPage extends Component {
           ...this.state,
           name: "",
           price: "",
+          image:"",
         });
         //redirect
         // this.props.history.push("/");
@@ -364,7 +374,7 @@ class ProductsDetailPage extends Component {
             <div className="product-links">
               <div className="links">
                 <MDBContainer>
-                  <MDBBtn onClick={this.toggle} color="dark">
+                  <MDBBtn onClick={this.toggle1} color="dark">
                     ADD A DUPE
                   </MDBBtn>
                   <h3>
@@ -384,12 +394,12 @@ class ProductsDetailPage extends Component {
                   </button>
 
                   <MDBModal
-                    isOpen={this.state.modal}
+                    isOpen={this.state.modal1}
                     fade={false}
-                    toggle={this.toggle}
+                    toggle={this.toggle1}
                   >
-                    <MDBModalHeader toggle={this.toggle}>
-                      MDBModal title
+                    <MDBModalHeader toggle={this.toggle1}>
+                      Add A Dupe
                     </MDBModalHeader>
                     <MDBModalBody>
                       <form noValidate onSubmit={this.onSubmit1}>
@@ -435,7 +445,7 @@ class ProductsDetailPage extends Component {
                       </form>
                     </MDBModalBody>
                     <MDBModalFooter>
-                      <MDBBtn color="dark" onClick={this.toggle}>
+                      <MDBBtn color="dark" onClick={this.toggle1}>
                         Close
                       </MDBBtn>
                     </MDBModalFooter>
@@ -446,6 +456,11 @@ class ProductsDetailPage extends Component {
 
             <div className="price">
               <span>${product.price}</span>
+              {/* <img
+                src={"http://localhost:4000/" + product.image}
+                alt="wrapkit"
+                className="img-fluid"
+              /> */}
             </div>
           </div>
         </main>

@@ -243,7 +243,7 @@ class CreateProduct extends Component {
                   <option value="★★★★★">★★★★★</option>
                 </select>
                 <div className="text-center mt-4">
-                  <MDBBtn color="indigo" type="submit">Add Product</MDBBtn>
+                  <MDBBtn color="dark" type="submit">Add Product</MDBBtn>
                 </div>
               </form>
             </MDBCardBody>
