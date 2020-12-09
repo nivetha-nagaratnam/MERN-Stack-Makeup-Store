@@ -15,6 +15,7 @@ import fenty_gloss from "../../images/fenty-lip gloss.jpeg";
 import mac_lipstick from "../../images/mac- lipstick.jpeg";
 
 class ProductCard extends Component {
+  
 
   onDeleteClick (id) {
     axios
@@ -55,7 +56,7 @@ class ProductCard extends Component {
       this.props.product.name === "Gloss Bomb Universal Lip Luminizer"
     ) {
       image = <img className= 'img' src={fenty_gloss} alt="lipgloss" />;
-    } else if (this.props.product === "Matte Lipstick") {
+    } else if (this.props.product.name === "Matte Lipstick") {
       image = <img className= 'img' src={mac_lipstick} alt="lipstick" />;
     } else {
       image = "";

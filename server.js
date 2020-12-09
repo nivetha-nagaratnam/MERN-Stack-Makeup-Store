@@ -24,6 +24,7 @@ app.use('/api/users', require('./routes/api/users'));
 app.use('/api/products', require('./routes/api/products'));
 app.use('/api/reviews', require('./routes/api/reviews'));
 app.use('/api/dupes', require('./routes/api/dupes'));
+app.use('/api/cart', require('./routes/api/carts'));
 
 
 

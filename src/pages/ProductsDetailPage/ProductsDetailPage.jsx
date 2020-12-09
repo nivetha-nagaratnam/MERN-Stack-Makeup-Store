@@ -26,15 +26,30 @@ class ProductsDetailPage extends Component {
       dupe: [],
       name: "",
       price: "",
-      modal: false
+      modal: false,
     };
   }
 
+  addToCart = (id, quantity) => {
+    let requestData = {
+      productId: id,
+      quantity: quantity,
+    };
+    axios
+      .post("http://localhost:3000/api/cart", requestData)
+      .then((res) => {
+        console.log("item Added", res);
+      })
+      .catch((err) => {
+        console.log("couldn't add item");
+      });
+  };
+
   toggle = () => {
     this.setState({
-      modal: !this.state.modal
+      modal: !this.state.modal,
     });
-  }
+  };
 
   onChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
@@ -331,7 +346,7 @@ class ProductsDetailPage extends Component {
       <React.Fragment>
         <main className="container">
           <div className="left-side">
-                <div className="image_product">{image}</div>
+            <div className="image_product">{image}</div>
           </div>
 
           <div className="right-side">
@@ -352,14 +367,22 @@ class ProductsDetailPage extends Component {
                   <MDBBtn onClick={this.toggle} color="dark">
                     ADD A DUPE
                   </MDBBtn>
-                  <h3 >
-                  <Link
-                    to={`/product-detail/${product._id}/dupes/show`}
+                  <h3>
+                    <Link
+                      to={`/product-detail/${product._id}/dupes/show`}
+                      className="btn btn-dark btn-rounded mb-4"
+                    >
+                      View All Dupes
+                    </Link>
+                  </h3>
+
+                  <button
+                    onClick={(e) => this.addToCart(product._id, 1)}
                     className="btn btn-dark btn-rounded mb-4"
                   >
-                    View All Dupes
-                  </Link>
-                </h3>
+                    Add to cart
+                  </button>
+
                   <MDBModal
                     isOpen={this.state.modal}
                     fade={false}
@@ -431,7 +454,7 @@ class ProductsDetailPage extends Component {
         <br></br>
         <br></br>
         <h4 className="rating-title">Rate & Review The Product</h4>
-        
+
         <div>
           <span>
             <h3 className="rate-link">

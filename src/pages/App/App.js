@@ -14,6 +14,7 @@ import LipProductsPage from '../LipProductsPage/LipProductsPage';
 import EyeProductsPage from '../EyeProductsPage/EyeProductsPage';
 import CheekProductsPage from '../CheekProductsPage/CheekProductsPage'
 import FaceProductsPage from '../FaceProductsPage/FaceProductsPage'
+import CartPage from '../CartPage/CartPage'
 
 class App extends Component {
   constructor(props) {
@@ -76,6 +77,16 @@ class App extends Component {
             exact
             path="/product-detail/:id"
             component={ProductsDetailPage}
+          />
+          <Route
+            exact
+            path="/cart"
+            component={CartPage}
+            render={({ history }) => (
+              <CartPage
+                history={history}
+              />
+            )}          
           />
         </Switch>
       </div>

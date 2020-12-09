@@ -48,6 +48,7 @@ async function deleteProduct(req, res) {
    .catch(err => res.status(404).json({ error: 'No product' }));
 }
 
+
 module.exports = {
   create,
   index,

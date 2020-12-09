@@ -20,6 +20,8 @@ const NavBar = (props) => {
       <Link to='/view-cheek-products' className='NavBar-link'>View Cheek Products</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='/view-face-products' className='NavBar-link'>View Face Products</Link>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <Link to='/cart' className='NavBar-link'>Cart</Link>
     </div>
     :
     <div>
@@ -39,6 +41,7 @@ const NavBar = (props) => {
       {nav}
     </div>
   );
-};
+
+}
 
 export default NavBar;
