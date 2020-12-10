@@ -41,12 +41,11 @@ const Testimony = (props) => {
                           </div>
                         </div>
                         <div className="col-xs-9">
-                          <p className="lead">
-                            {" "}
+                          <p style={{ fontSize: '20px' }} className="lead">
                             This website is my go to place to buy makeup
                             products.
                           </p>
-                          <p className="lead secondary-font">Charles Davies</p>
+                          <p style={{ fontSize: '18px' }} className="lead secondary-font">Charles Davies</p>
                         </div>
                       </div>
                     </div>
@@ -66,11 +65,11 @@ const Testimony = (props) => {
                           </div>
                         </div>
                         <div className="col-xs-9">
-                          <p className="lead">
+                          <p style={{ fontSize: '20px' }} className="lead">
                             Sephora who? I stopped shopping there after I
-                            discovered Our Little Secret.{" "}
+                            discovered Our Little Secret.
                           </p>
-                          <p className="lead secondary-font">Charles Davies</p>
+                          <p style={{ fontSize: '18px' }} className="lead secondary-font">Charles Davies</p>
                         </div>
                       </div>
                     </div>

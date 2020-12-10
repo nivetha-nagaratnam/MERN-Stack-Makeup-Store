@@ -13,6 +13,7 @@ import tarte_blush from "../../images/tarte- blush.jpeg";
 import kylie_gloss from "../../images/kylie- lip gloss.jpeg";
 import fenty_gloss from "../../images/fenty-lip gloss.jpeg";
 import mac_lipstick from "../../images/mac- lipstick.jpeg";
+import natasha_eyeshadow from "../../images/natasha-eyepalette.png";
 
 class ProductCard extends Component {
   
@@ -58,7 +59,9 @@ class ProductCard extends Component {
       image = <img className= 'img' src={fenty_gloss} alt="lipgloss" />;
     } else if (this.props.product.name === "Matte Lipstick") {
       image = <img className= 'img' src={mac_lipstick} alt="lipstick" />;
-    } else {
+    } else if (this.props.product.name === "Sunset Eyeshadow Palette") {
+      image = <img src={natasha_eyeshadow} alt="eyeshadow" />;
+    }else {
       image = "";
     }
 

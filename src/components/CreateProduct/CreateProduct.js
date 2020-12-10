@@ -179,17 +179,13 @@ class CreateProduct extends Component {
 
  <div>
    
- <Link to="/" className="btn btn-dark">
-        Return to Home Page
-        </Link>
-
 <MDBContainer>
       <MDBRow className="body">
         <MDBCol md="12">
           <MDBCard className="body_max ">
             <MDBCardBody>
               <form noValidate onSubmit={this.onSubmit}>
-                <p className="h4 text-center mb-4">Add Product</p>
+                <p className="font-title1">Add Product</p>
                 <label htmlFor="defaultFormContactMessageEx" className="grey-text">
                   Product Name
                 </label>
@@ -211,18 +207,19 @@ class CreateProduct extends Component {
                 <label htmlFor="defaultFormContactMessageEx" className="grey-text">
                   Price
                 </label>
-                <input type="text" name="price" className="form-control" value={this.state.price} onChange={this.onChange} />
+                <input type="text" placeholder="Enter Price of Product" name="price" className="form-control" value={this.state.price} onChange={this.onChange} />
                 <br />
                 <label htmlFor="defaultFormContactMessageEx" className="grey-text">
                   Product Description
                 </label>
-                <input type="text" name="description" className="form-control" value={this.state.description}
+                <input type="text" name="description" placeholder="Enter Description of Product" className="form-control" value={this.state.description}
                   onChange={this.onChange} />
                 <br />
                 <label htmlFor="defaultFormContactMessageEx" className="grey-text">
                   Product Category
                 </label>
-                <select name="category" value={this.state.category} onChange={this.onChange}>
+                &nbsp;
+                <select className="form-control" name="category" value={this.state.category} onChange={this.onChange}>
                   <option value="" disabled selected>Product Category</option>
                   <option value="face">Face</option>
                   <option value="lips">Lips</option>
@@ -233,7 +230,8 @@ class CreateProduct extends Component {
                 <label htmlFor="defaultFormContactMessageEx" className="grey-text">
                   Ratings
                 </label>
-                <select name="rating" value={this.state.rating} onChange={this.onChange}>
+                &nbsp;
+                <select className="form-control" name="rating" value={this.state.rating} onChange={this.onChange}>
                   <option value="" disabled selected>Ratings</option>
                   <option value="☆☆☆☆☆">☆☆☆☆☆</option>
                   <option value="★☆☆☆☆">★☆☆☆☆</option>

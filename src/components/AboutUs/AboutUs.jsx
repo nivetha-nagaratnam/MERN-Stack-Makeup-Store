@@ -25,7 +25,8 @@ const AboutUs = (props) => {
               <div className="col-md-5 col-md-offset-1 wow fadeIn">
                 <img src="assets/img/makeup-store-display-896x686.jpg" className="img-responsive mb30" />
                 <p className="text-center">
-                  This store was inspired by Nivetha's spending habits!{" "}
+                  This store was inspired by Nivetha's spending habits. She thought that people like 
+                  her would benefit from this website.
                 </p>
               </div>
 

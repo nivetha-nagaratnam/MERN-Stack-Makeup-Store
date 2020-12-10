@@ -58,9 +58,9 @@ const ContactUs = (props) => {
                         <div className="tab-inner">
                           <div className="row">
                             <div className="ul-fix2 ">
-                              <a className="lead"><Facebook className="fa-facebook " color="white" size={52}/> </a>
-                              <a><Twitter className="fa-twitter " size={52}/></a>
-                              <a><Instagram className="fa-instagram " size={52}/></a>
+                              <i className="lead"><Facebook className="fa-facebook " color="white" size={52}/> </i>
+                              <i><Twitter className="fa-twitter " size={52}/></i>
+                              <i><Instagram className="fa-instagram " size={52}/></i>
                             </div>
                             <div className="col-sm-5"></div>
                           </div>

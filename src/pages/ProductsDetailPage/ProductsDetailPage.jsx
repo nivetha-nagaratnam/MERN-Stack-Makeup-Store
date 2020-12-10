@@ -12,6 +12,7 @@ import tarte_blush from "../../images/tarte- blush.jpeg";
 import kylie_gloss from "../../images/kylie- lip gloss.jpeg";
 import fenty_gloss from "../../images/fenty-lip gloss.jpeg";
 import mac_lipstick from "../../images/mac- lipstick.jpeg";
+import natasha_eyeshadow from "../../images/natasha-eyepalette.png";
 import "./ProductsDetailPage.css";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 class ProductsDetailPage extends Component {
@@ -86,8 +87,8 @@ class ProductsDetailPage extends Component {
           content: "",
           rating: "",
         });
-        //redirect
-        // this.props.history.push("/");
+        //refresh page
+        // window.location.reload(false);
       })
       .catch((err) => {
         console.log("Error in CreateReview!");
@@ -237,7 +238,9 @@ class ProductsDetailPage extends Component {
       image = <img src={fenty_gloss} alt="lipgloss" />;
     } else if (this.state.product.name === "Matte Lipstick") {
       image = <img src={mac_lipstick} alt="lipstick" />;
-    } else {
+    } else if (this.state.product.name === "Sunset Eyeshadow Palette") {
+      image = <img src={natasha_eyeshadow} alt="eyeshadow" />;
+    }else {
       image = "";
     }
 
@@ -399,7 +402,7 @@ class ProductsDetailPage extends Component {
                     toggle={this.toggle1}
                   >
                     <MDBModalHeader toggle={this.toggle1}>
-                      Add A Dupe
+                    <span style={{ fontWeight: 'bold' }}>Add A Dupe</span>
                     </MDBModalHeader>
                     <MDBModalBody>
                       <form noValidate onSubmit={this.onSubmit1}>
@@ -485,10 +488,10 @@ class ProductsDetailPage extends Component {
                   fade={false}
                   toggle={this.toggle}
                 >
-                  <MDBModalHeader toggle={this.toggle}>
-                    Ratings & Review
+                  <MDBModalHeader className="make-modal-font-bigger" toggle={this.toggle}>
+                  <span style={{ fontWeight: 'bold' }}>Ratings & Review </span>
                   </MDBModalHeader>
-                  <MDBModalBody>
+                  <MDBModalBody className="make-modal-font-bigger">
                     <form noValidate onSubmit={this.onSubmit}>
                       <div className="modal-body mx-3">
                         <div className="md-form mb-4">

@@ -111,3 +111,7 @@ body {
 .make-box-bigger {
     min-width: 1000px;
 }
+
+.modal-font {
+  font-size: 14px;
+}

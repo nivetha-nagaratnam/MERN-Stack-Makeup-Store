@@ -2,7 +2,7 @@
    padding-left: 300px;
 }
 .ul-fix2  {
-    padding-left: 600px;
+    padding-left: 470px;
  }
 
 .fa {
@@ -34,3 +34,9 @@
     background: #125688;
     color: white;
   }
+
+  i{
+    margin-right: 5px;
+  }
+
+

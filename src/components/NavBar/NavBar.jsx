@@ -55,7 +55,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-
+import CartPayment from '../CartPayment/CartPayment'
 
 const NavBar = (props) => {
   let nav = props.user ? (
@@ -87,12 +87,17 @@ const NavBar = (props) => {
                     className="NavBar-link"
                     onClick={props.handleLogout}
                   >
-                    LOG OUT
+                    Log Out
                   </Link>
                   <span className="NavBar-welcome">
-                    WELCOME, {props.user.name}
+                    Welcome, {props.user.name}
                   </span>
                 </li>
+                <li>
+                    <Link to="/signup" className="NavBar-link">
+                      Sign Up
+                    </Link>
+                  </li>
                 <li>
                   <Link to="/" className="NavBar-link">
                     Home Page
@@ -124,6 +129,11 @@ const NavBar = (props) => {
                 <li>
                   <Link to="/view-face-products" className="NavBar-link">
                     View Face Products
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/view-lip-products" className="NavBar-link">
+                    View Lip Products
                   </Link>
                 </li>
                 <li>
@@ -165,12 +175,12 @@ const NavBar = (props) => {
                 <div>
                   <li>
                     <Link to="/login" className="NavBar-link">
-                      LOG IN
+                      Log In
                     </Link>
                   </li>
                   <li>
                     <Link to="/signup" className="NavBar-link">
-                      SIGN UP
+                      Sign Up
                     </Link>
                   </li>
                   <li class="navbar-brand ">

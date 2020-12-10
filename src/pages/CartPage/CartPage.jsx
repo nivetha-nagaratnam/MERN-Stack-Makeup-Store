@@ -6,9 +6,8 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBBtn,
   MDBCard,
-  MDBCardBody,
+  MDBCardBody
 } from "mdbreact";
 
 class CartPage extends Component {
@@ -19,7 +18,6 @@ class CartPage extends Component {
       payload: [],
     };
   }
-
   componentDidMount() {
     axios
       .get("http://localhost:3000/api/cart")
@@ -60,7 +58,6 @@ class CartPage extends Component {
       .then((res) => {
         console.log(res.data.items);
         this.fetchCart();
-        alert("Item Incremented");
       })
       .catch((err) => {
         console.log("Error in fetchCart");
@@ -82,7 +79,6 @@ class CartPage extends Component {
   render() {
     return (
       <main className="make-row">
-
         <CartPayment />
 
         <br></br>
@@ -122,13 +118,13 @@ class CartPage extends Component {
                                 {this.state.carts.map((item, i) => (
                                   <tr>
                                     <td>{item.productId.name}</td>
-                                    <td>{item.productId.price}</td>
+                                    <td> ${item.productId.price}</td>
                                     <td>
                                       <button
                                         onClick={(e) =>
                                           this.increaseQty(item.productId._id)
                                         }
-                                        className="btn btn-primary btn-dark"
+                                        className="btn btn-dark"
                                       >
                                         +
                                       </button>
@@ -136,14 +132,14 @@ class CartPage extends Component {
                                     </td>
                                     <td className="text-right">
                                       <h5 className="font-medium m-b-30">
-                                        {item.total}
+                                        ${item.total}
                                       </h5>
                                     </td>
                                   </tr>
                                 ))}
                                 <tr>
                                   <td colspan="3" align="right">
-                                    Subtotal :{this.state.payload.subTotal}
+                                    Subtotal: ${this.state.payload.subTotal}
                                   </td>
                                   <td colspan="4" align="right">
                                     <button

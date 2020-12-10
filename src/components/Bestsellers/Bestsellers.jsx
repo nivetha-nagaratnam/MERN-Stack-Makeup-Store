@@ -58,14 +58,22 @@ const Bestsellers = (props) => {
                 </li>
                 <li>
                   <img
-                    src="assets/img/logo/twoface-mascara.png"
+                    src="assets/img/logo/benefit-bronzer.jpeg"
+                    className="img-responsive"
+                    alt=""
+                  />
+                </li>
+                
+                <li>
+                  <img
+                    src="assets/img/logo/milani-blush.jpeg"
                     className="img-responsive"
                     alt=""
                   />
                 </li>
                 <li>
                   <img
-                    src="assets/img/logo/benefit-bronzer.jpeg"
+                    src="assets/img/logo/twoface-mascara.png"
                     className="img-responsive"
                     alt=""
                   />
