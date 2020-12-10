@@ -9,6 +9,10 @@
   .card {
     display:inline-block;
   }
+
+  .card-body  {
+    font-size:16px;
+  }
   
   .card-footer{
     display: flex;
@@ -24,4 +28,13 @@
   .grid {
     padding: 5px;
     display:inline-block;
+  }
+
+  .button1  {
+    font-weight:400px;
+    margin: .375rem;
+    text-transform: uppercase;
+    border-radius: .125rem;
+    padding: .84rem 2.14rem;
+    font-size: 11px;
   }

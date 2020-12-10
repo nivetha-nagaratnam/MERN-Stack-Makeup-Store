@@ -106,14 +106,14 @@ class ProductCard extends Component {
                   </div>
                   <div className="card-footer">
                     <Link to={`/product-detail/${product._id}`}>
-                      <button type="button" className="btn btn-dark">
+                      <button type="button" className="btn btn-dark button1">
                         <p>Details</p>
                       </button>
                     </Link>
                     <br />
                     <button
                       type="button"
-                      className="btn btn-dark"
+                      className="btn btn-dark button1"
                       onClick={this.onDeleteClick.bind(this, product._id)}
                     >
                       {" "}

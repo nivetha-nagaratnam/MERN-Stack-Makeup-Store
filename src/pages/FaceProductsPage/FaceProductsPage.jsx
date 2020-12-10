@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import tokenService from "../../utils/tokenService";
+import './FaceProductsPage.css'
 
 class FaceProductsPage extends Component {
     constructor(props) {
@@ -44,7 +45,7 @@ class FaceProductsPage extends Component {
     
         return (
           <div className="ShowBookList">
-            <div className="container">
+            <div className="vfp-container">
               <div className="row">
               </div>
     

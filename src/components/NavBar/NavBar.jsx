@@ -138,7 +138,6 @@ const NavBar = (props) => {
         </div>
         {/* <!-- /.container-fluid --> */}
       </nav>
-      ;
     </div>
   ) : (
     <div>

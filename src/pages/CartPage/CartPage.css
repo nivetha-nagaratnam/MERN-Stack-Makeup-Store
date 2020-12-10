@@ -1,0 +1,14 @@
+.make-row   {
+    display:flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.make-body-bigger   {
+    min-width: 600px;
+}
+
+.make-basket-biger  {
+    min-width: 140px;
+}

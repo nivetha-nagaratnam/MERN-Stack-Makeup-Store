@@ -374,7 +374,7 @@ class ProductsDetailPage extends Component {
             <div className="product-links">
                 <MDBContainer>
                 <div className="links">
-                  <MDBBtn onClick={this.toggle1} color="dark">
+                  <MDBBtn onClick={this.toggle1} color="dark" className="btn btn-dark btn-rounded mb-4">
                     ADD A DUPE
                   </MDBBtn>
                   <div>
@@ -473,11 +473,13 @@ class ProductsDetailPage extends Component {
 
         <div>
           <span>
-            <div className="rate-link">
+            <div >
               <MDBContainer>
-                <MDBBtn onClick={this.toggle} color="dark">
+              <div className="rate-link">
+                <MDBBtn onClick={this.toggle} color="dark" className="btn btn-dark btn-rounded mb-4 ">
                   RATE & REVIEW
                 </MDBBtn>
+                </div>
                 <MDBModal
                   isOpen={this.state.modal}
                   fade={false}

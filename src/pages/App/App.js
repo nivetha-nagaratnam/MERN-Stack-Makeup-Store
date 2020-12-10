@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import ProductPage from '../ProductPage/ProductPage';
-import NavBar from "../../components/NavBar/NavBar";
 import userService from '../../utils/userService';
 // import tokenService from '../../utils/tokenService';
 import './App.css';
@@ -17,6 +16,7 @@ import CheekProductsPage from '../CheekProductsPage/CheekProductsPage'
 import FaceProductsPage from '../FaceProductsPage/FaceProductsPage'
 import CartPage from '../CartPage/CartPage'
 import LandingPage from '../LandingPage/LandingPage'
+import NavBar from "../../components/NavBar/NavBar";
 
 
 class App extends Component {
@@ -48,7 +48,6 @@ class App extends Component {
           </body>
         {((window.location.pathname === "") || (window.location.pathname === "/"))
           && <LandingPage user={this.state.user} handleLogout={this.handleLogout} />}
-        {/* <ProductPage user={this.state.user} handleLogout={this.handleLogout} /> */}
         <Switch>
           <Route
             exact
