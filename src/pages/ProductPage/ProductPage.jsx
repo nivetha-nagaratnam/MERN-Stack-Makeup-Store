@@ -5,10 +5,13 @@ import Header from '../../components/Header/Header';
 
 const ProductPage = (props) => {
   return (
-    <div className="ProductPage">
-      <Header 
-      user={props.user}
-      handleLogout={props.handleLogout}/>
+    // <div className="ProductPage">
+    //   <Header 
+    //   user={props.user}
+    //   handleLogout={props.handleLogout}/>
+    // </div>
+    <div>
+      
     </div>
   );
 

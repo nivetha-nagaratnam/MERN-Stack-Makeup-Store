@@ -1,0 +1,40 @@
+.center {
+    align-items: center;
+}
+
+h2  {
+   text-align: center;
+   margin-top: 30px;
+   margin-bottom: 10px;
+   font-size: 34px;
+   letter-spacing: 5px;
+}
+
+h3{
+    font-family: 'Dancing Script', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    text-transform: lowercase;
+    font-size: 25px;
+    font-weight: 400;
+    clear: both;
+    display: block;
+    padding-top: 10px;
+    letter-spacing: 1px;
+}
+
+.make-image-bigger {
+    min-height:343px; 
+    width: 428px;
+}
+
+.test10  {
+    padding-bottom:50px;
+    padding-top:20px;
+    font-family:'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+.text-center2{
+    padding-top:30px;
+}
+
+

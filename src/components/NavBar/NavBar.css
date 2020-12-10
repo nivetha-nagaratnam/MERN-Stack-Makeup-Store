@@ -1,13 +1,26 @@
 .NavBar {
     display: flex;
     justify-content: center;
-    margin: 0 0 20px;
+    margin: 0 0 0 0px;
+    padding-top: 16px;
   }
   
   .NavBar-link {
     margin: 0 10px;
+    font-size: 16px !important;
+
   }
   
   .NavBar-welcome {
-    color: grey;
+    color: black;
+    font-size: 12px !important;
+
+  }
+
+  .test{
+    font-family: 'Dancing Script', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: none;
+    font-size: 35px !important;
+    margin-right: 20px;
+    margin-left: 20px;
   }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import tokenService from "../../utils/tokenService";
+import "./ViewProductsPage.css"
 
 class ViewProductsPage extends Component {
   constructor(props) {
@@ -45,7 +45,7 @@ class ViewProductsPage extends Component {
 
     return (
       <div className="ShowBookList">
-        <div className="container">
+        <div className="vpp-container">
           <div className="row">
           </div>
 

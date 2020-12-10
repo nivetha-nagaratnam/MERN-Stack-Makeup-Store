@@ -6,7 +6,7 @@ const Header = (props) => {
 
   return (
     <div className="Header">
-      <h1 className="Header-h1">Our Little Secret</h1>
+      {/* <h1 className="Header-h1">Our Little Secret</h1> */}
       <NavBar 
       user={props.user}
       handleLogout={props.handleLogout}/>

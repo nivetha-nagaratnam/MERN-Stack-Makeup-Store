@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import ProductPage from '../ProductPage/ProductPage';
+import NavBar from "../../components/NavBar/NavBar";
 import userService from '../../utils/userService';
 // import tokenService from '../../utils/tokenService';
 import './App.css';
@@ -15,6 +16,7 @@ import EyeProductsPage from '../EyeProductsPage/EyeProductsPage';
 import CheekProductsPage from '../CheekProductsPage/CheekProductsPage'
 import FaceProductsPage from '../FaceProductsPage/FaceProductsPage'
 import CartPage from '../CartPage/CartPage'
+import LandingPage from '../LandingPage/LandingPage'
 
 
 class App extends Component {
@@ -37,7 +39,16 @@ class App extends Component {
   render() {
     return (
       <div>
-        <ProductPage user={this.state.user} handleLogout={this.handleLogout} />
+        <body id="page-top" className="index">
+        <div className="master-wrapper">
+        <NavBar
+          user={this.state.user}
+          handleLogout={this.handleLogout} />
+          </div>
+          </body>
+        {((window.location.pathname === "") || (window.location.pathname === "/"))
+          && <LandingPage user={this.state.user} handleLogout={this.handleLogout} />}
+        {/* <ProductPage user={this.state.user} handleLogout={this.handleLogout} /> */}
         <Switch>
           <Route
             exact

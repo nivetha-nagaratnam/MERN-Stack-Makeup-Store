@@ -201,8 +201,8 @@ class ProductsDetailPage extends Component {
       return (
         <tbody>
           <tr>
-            <td>{rev.user}</td>
-            <td>{rev.content}</td>
+            <td >{rev.user}</td>
+            <td >{rev.content}</td>
             <td>{rev.rating}</td>
           </tr>
         </tbody>
@@ -354,16 +354,16 @@ class ProductsDetailPage extends Component {
       //   </div>
       // </div>
       <React.Fragment>
-        <main className="container">
+        <main className="product-detail-container">
           <div className="left-side">
             <div className="image_product">{image}</div>
           </div>
 
           <div className="right-side">
             <div className="product-header">
-              <h3>{product.brand}</h3>
-              <h2>{product.name}</h2>
-              <p>{product.rating}</p>
+              <div className="brand-title">{product.brand}</div>
+              <div className="name-title">{product.name}</div>
+              <div className="brand-title">{product.rating}</div>
             </div>
 
             <div className="product-body">
@@ -372,19 +372,19 @@ class ProductsDetailPage extends Component {
             </div>
 
             <div className="product-links">
-              <div className="links">
                 <MDBContainer>
+                <div className="links">
                   <MDBBtn onClick={this.toggle1} color="dark">
                     ADD A DUPE
                   </MDBBtn>
-                  <h3>
+                  <div>
                     <Link
                       to={`/product-detail/${product._id}/dupes/show`}
                       className="btn btn-dark btn-rounded mb-4"
                     >
                       View All Dupes
                     </Link>
-                  </h3>
+                  </div>
 
                   <button
                     onClick={(e) => this.addToCart(product._id, 1)}
@@ -450,8 +450,9 @@ class ProductsDetailPage extends Component {
                       </MDBBtn>
                     </MDBModalFooter>
                   </MDBModal>
+                  </div>
                 </MDBContainer>
-              </div>
+              
             </div>
 
             <div className="price">
@@ -468,11 +469,11 @@ class ProductsDetailPage extends Component {
         <div className="line"></div>
         <br></br>
         <br></br>
-        <h4 className="rating-title">Rate & Review The Product</h4>
+        <div className="rating-title"> Reviews & Ratings </div>
 
         <div>
           <span>
-            <h3 className="rate-link">
+            <div className="rate-link">
               <MDBContainer>
                 <MDBBtn onClick={this.toggle} color="dark">
                   RATE & REVIEW
@@ -552,11 +553,11 @@ class ProductsDetailPage extends Component {
                   </MDBModalFooter>
                 </MDBModal>
               </MDBContainer>
-            </h3>
+            </div>
           </span>
         </div>
 
-        <div className="col-md-10">
+        <div className="col-md-10 ">
           <table className="table table-hover">
             <thead>
               <tr>
@@ -564,7 +565,7 @@ class ProductsDetailPage extends Component {
                 <th>Review</th>
                 <th>Rating</th>
               </tr>
-            </thead>
+            </thead>      
             {reviewItems}
           </table>
         </div>
