@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Our Little Secret - Project 4 MERN Stack Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## App Title
 
-## Available Scripts
+Travelogue is a travel blog that allows users to upload their travel experiences, while viewing other people's experiences. Our app allows users to create travel posts and add any pictures they would like to share from their visit. In addition to creating their own posts, users can add reviews to any other posts they find interesting. Users can also, view all the posts and reviews they have made when clicking their profile. Some cool features we added are a weather api and a map api. 
+When a user creates a post anyone viewing that post can see the current weather for that speific city that the user visited and they are able to see where that city is located on the map. 
 
-In the project directory, you can run:
+## Screenshot(s)
+<img align="center" src="landing page.png" width="700" height="400"/>
+<img align="center" src="view all posts.png" width="700" height="400"/>
+<img align="center" src="details page.png" width="700" height="400"/>
+<img align="center" src="user information page.png" width="700" height="400"/>
+<img align="center" src="sign in.png" width="700" height="400"/>
+<img align="center" src="register.png" width="700" height="400"/>
+<img align="center" src="change your password.png" width="700" height="400"/>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* Python 
+* Django
+* PostgreSQL
+* Postbird
+* HTML 
+* CSS 
+* Bulma
+* Bootstrap
+* JavaScript 
+* jQuery 
+* Ajax Fetch API
+* Google Places API 
+* Google Maps JavaScript API 
+* Frontend JavaScript
+* OpenWeatherMap's Weather API 
+* Amazon Web Services S3
+ 
+## Getting Started
 
-### `npm test`
+* Deployed Heroku App Link: https://project-travelogue.herokuapp.com/
+* Trello Board Link: https://trello.com/b/0YicLzgX/travelogue-app
+* ERD Link: https://lucid.app/lucidchart/c5f153c3-530f-4c01-858a-c328da6641e2/edit?page=0_0#?folder_id=home&browser=icon
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Next Steps
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Some next steps would be is to add a seed file so the data is consistent for everyone in the group. We would have also liked to have a default profile picture for every user and have the option for the user to change their profile picture. Another feature we would like to include are travel recommendations, and this would be generated using an Expedia API. Another interesting feature could be to implement email confirmation for user registration.
