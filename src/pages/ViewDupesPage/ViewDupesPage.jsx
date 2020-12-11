@@ -13,7 +13,7 @@ class ViewDupesPage extends Component {
   componentDidMount() {
     axios
       .get(
-        "http://localhost:3000/api/dupes/products/" +
+        "/api/dupes/products/" +
           this.props.match.params.id +
           "/dupes/show"
       )

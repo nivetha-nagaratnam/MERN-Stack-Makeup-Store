@@ -14,7 +14,7 @@ class ViewProductsPage extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/products", {
+      .get("/api/products", {
         headers: {
           Authorization: "Bearer " + tokenService.getToken(),
         },

@@ -14,7 +14,7 @@ class FaceProductsPage extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/products/face", {
+      .get("/api/products/face", {
         headers: {
           Authorization: "Bearer " + tokenService.getToken(),
         },

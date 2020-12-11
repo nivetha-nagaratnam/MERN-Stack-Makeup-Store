@@ -18,7 +18,7 @@ import natasha_eyeshadow from "../../images/natasha-eyepalette.png";
 class ProductCard extends Component {
   onDeleteClick(id) {
     axios
-      .delete("http://localhost:3000/api/products/" + id)
+      .delete("/api/products/" + id)
       .then((res) => {
         this.props.history.push("/");
         window.location.reload(false);

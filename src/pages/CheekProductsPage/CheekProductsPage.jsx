@@ -14,7 +14,7 @@ class CheekProductsPage extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/products/cheeks", {
+      .get("/api/products/cheeks", {
         headers: {
           Authorization: "Bearer " + tokenService.getToken(),
         },
