@@ -2,44 +2,29 @@
 
 ## App Title
 
-Travelogue is a travel blog that allows users to upload their travel experiences, while viewing other people's experiences. Our app allows users to create travel posts and add any pictures they would like to share from their visit. In addition to creating their own posts, users can add reviews to any other posts they find interesting. Users can also, view all the posts and reviews they have made when clicking their profile. Some cool features we added are a weather api and a map api. 
-When a user creates a post anyone viewing that post can see the current weather for that speific city that the user visited and they are able to see where that city is located on the map. 
+Our Little Secret is a full-stack CRUD app that allows users to shop for makeup products while finding dupes for products. There are a very few websites that showcase this information to users. This app was created to allow users to shop for products, while saving money on cheaper dupes. Here's to hoping Our Little Secret App will save money for users!
 
 ## Screenshot(s)
-<img align="center" src="landing page.png" width="700" height="400"/>
-<img align="center" src="view all posts.png" width="700" height="400"/>
-<img align="center" src="details page.png" width="700" height="400"/>
-<img align="center" src="user information page.png" width="700" height="400"/>
-<img align="center" src="sign in.png" width="700" height="400"/>
-<img align="center" src="register.png" width="700" height="400"/>
-<img align="center" src="change your password.png" width="700" height="400"/>
-
+<img align="center" src="landing-page.png" width="700" height="400"/>
+<img align="center" src="view-all-products.png" width="700" height="400"/>
+<img align="center" src="product-detail-page.png" width="700" height="400"/>
+<img align="center" src="shopping-cart.png" width="700" height="400"/>
 
 ## Technologies Used
 
-* Python 
-* Django
-* PostgreSQL
-* Postbird
-* HTML 
+* MongoDB/Mongoose
+* Express
+* React
+* Node
 * CSS 
-* Bulma
-* Bootstrap
-* JavaScript 
-* jQuery 
-* Ajax Fetch API
-* Google Places API 
-* Google Maps JavaScript API 
-* Frontend JavaScript
-* OpenWeatherMap's Weather API 
-* Amazon Web Services S3
- 
+* MDBootstrap
+
 ## Getting Started
 
-* Deployed Heroku App Link: https://project-travelogue.herokuapp.com/
-* Trello Board Link: https://trello.com/b/0YicLzgX/travelogue-app
-* ERD Link: https://lucid.app/lucidchart/c5f153c3-530f-4c01-858a-c328da6641e2/edit?page=0_0#?folder_id=home&browser=icon
+* Deployed Heroku App Link: https://mern-makeup-store.herokuapp.com/
+* Trello Board Link: https://trello.com/b/VbLJuPO2/makeup-community-to-makeup-store-mern-project
+* ERD Link: https://lucid.app/lucidchart/b1fed8db-c434-4b2c-a95b-525c7a85086b/edit
 
 ## Next Steps
 
-Some next steps would be is to add a seed file so the data is consistent for everyone in the group. We would have also liked to have a default profile picture for every user and have the option for the user to change their profile picture. Another feature we would like to include are travel recommendations, and this would be generated using an Expedia API. Another interesting feature could be to implement email confirmation for user registration.
+Some next steps would be is to add more features to this store such as a search bar and a user profile page. I would also like to get image uploading available using Multer or AWS. In addition, I would like to implement a item decrement feature in my shopping cart.
