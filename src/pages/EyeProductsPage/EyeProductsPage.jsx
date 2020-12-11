@@ -14,7 +14,7 @@ class EyeProductsPage extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/products/eyes", {
+      .get("/api/products/eyes", {
         headers: {
           Authorization: "Bearer " + tokenService.getToken(),
         },

@@ -46,7 +46,7 @@ class ProductsDetailPage extends Component {
       quantity: quantity,
     };
     axios
-      .post("http://localhost:3000/api/cart", requestData)
+      .post("/api/cart", requestData)
       .then((res) => {
         console.log("item Added", res);
       })
@@ -82,7 +82,7 @@ class ProductsDetailPage extends Component {
 
     axios
       .post(
-        "http://localhost:3000/api/reviews/products/" +
+        "/api/reviews/products/" +
           this.props.match.params.id +
           "/reviews",
         data
@@ -113,7 +113,7 @@ class ProductsDetailPage extends Component {
 
     axios
       .post(
-        "http://localhost:3000/api/dupes/products/" +
+        "/api/dupes/products/" +
           this.props.match.params.id +
           "/dupes",
         data
@@ -133,7 +133,7 @@ class ProductsDetailPage extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/products/" + this.props.match.params.id)
+      .get("/api/products/" + this.props.match.params.id)
       .then((res) => {
         this.setState({
           product: res.data,
