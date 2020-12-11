@@ -2,13 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./CartPage.css";
 import CartPayment from "../../components/CartPayment/CartPayment";
-import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody
-} from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody } from "mdbreact";
 
 class CartPage extends Component {
   constructor(props) {

@@ -5,8 +5,7 @@ import ContactUs from "../../components/ContactUs/ContactUs";
 import Testimony from "../../components/Testimony/Testimony";
 import Feedback from "../../components/Feedback/Feedback";
 import Bestsellers from "../../components/Bestsellers/Bestsellers";
-// import NavBar from "../../components/NavBar/NavBar"
-import "./LandingPage.css"
+import "./LandingPage.css";
 
 const LandingPage = (props) => {
   return (

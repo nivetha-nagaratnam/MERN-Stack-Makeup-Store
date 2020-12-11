@@ -1,18 +1,24 @@
-import React, { Component } from 'react';
-import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
+import React, { Component } from "react";
+import {
+  MDBContainer,
+  MDBBtn,
+  MDBModal,
+  MDBModalBody,
+  MDBModalHeader,
+  MDBModalFooter,
+} from "mdbreact";
 
 class Feedback extends Component {
   state = {
-    modal14: false
-  }
+    modal14: false,
+  };
 
-
-toggle = nr => () => {
-  let modalNumber = 'modal' + nr
-  this.setState({
-    [modalNumber]: !this.state[modalNumber]
-  });
-}
+  toggle = (nr) => () => {
+    let modalNumber = "modal" + nr;
+    this.setState({
+      [modalNumber]: !this.state[modalNumber],
+    });
+  };
 
   render() {
     return (
@@ -24,8 +30,11 @@ toggle = nr => () => {
             toggle={this.toggle(14)}
             centered
           >
-            <MDBModalHeader toggle={this.toggle(14)}> <span style={{ fontWeight: 'bold' }}>Thank You ❤️ </span></MDBModalHeader>
-            <MDBModalBody style={{ fontSize: '14px' }}>
+            <MDBModalHeader toggle={this.toggle(14)}>
+              {" "}
+              <span style={{ fontWeight: "bold" }}>Thank You ❤️ </span>
+            </MDBModalHeader>
+            <MDBModalBody style={{ fontSize: "14px" }}>
               Thank you for the feedback, it is greatly appreciated!
             </MDBModalBody>
             <MDBModalFooter>

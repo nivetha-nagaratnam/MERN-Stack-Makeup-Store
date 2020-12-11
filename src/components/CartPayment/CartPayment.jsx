@@ -1,42 +1,65 @@
-import React, { Component } from 'react';
-import './CartPayment.css'
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter} from 'mdbreact';
+import React, { Component } from "react";
+import "./CartPayment.css";
+import {
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBBtn,
+  MDBCard,
+  MDBCardBody,
+  MDBModal,
+  MDBModalBody,
+  MDBModalHeader,
+  MDBModalFooter,
+} from "mdbreact";
 
 class CartPayment extends Component {
-
   state = {
-    modal14: false
-  }
-  
-  toggle = nr => () => {
-    let modalNumber = 'modal' + nr
+    modal14: false,
+  };
+
+  toggle = (nr) => () => {
+    let modalNumber = "modal" + nr;
     this.setState({
-      [modalNumber]: !this.state[modalNumber]
+      [modalNumber]: !this.state[modalNumber],
     });
-  }
+  };
 
   render() {
     return (
       <div>
         <MDBContainer>
-        <MDBModal isOpen={this.state.modal14} fade={false} toggle={this.toggle(14)} centered>
-          <MDBModalHeader toggle={this.toggle(14)}> <span style={{ fontWeight: 'bold' }}>Order Confirmation</span></MDBModalHeader>
-          <MDBModalBody className="modal-font">
-          Hello customer thank you for shopping at Our Little Secret. We are working hard to 
-          to prepare your order. Here is your <span style={{ fontWeight: 'bold' }}>Order Number:XXXXXXXXXX</span>. Check your email to recieve
-          shipping updates. Thank You :)
-          </MDBModalBody>
-          <MDBModalFooter>
-            <MDBBtn color="dark" onClick={this.toggle(14)}>Close</MDBBtn>
-          </MDBModalFooter>
-        </MDBModal>
-      </MDBContainer>
+          <MDBModal
+            isOpen={this.state.modal14}
+            fade={false}
+            toggle={this.toggle(14)}
+            centered
+          >
+            <MDBModalHeader toggle={this.toggle(14)}>
+              {" "}
+              <span style={{ fontWeight: "bold" }}>Order Confirmation</span>
+            </MDBModalHeader>
+            <MDBModalBody className="modal-font">
+              Hello customer thank you for shopping at Our Little Secret. We are
+              working hard to to prepare your order. Here is your{" "}
+              <span style={{ fontWeight: "bold" }}>
+                Order Number:XXXXXXXXXX
+              </span>
+              . Check your email to recieve shipping updates. Thank You :)
+            </MDBModalBody>
+            <MDBModalFooter>
+              <MDBBtn color="dark" onClick={this.toggle(14)}>
+                Close
+              </MDBBtn>
+            </MDBModalFooter>
+          </MDBModal>
+        </MDBContainer>
 
         <MDBContainer>
           <MDBRow>
             <MDBCol md="6">
               <MDBCard>
-                <MDBCardBody className='make-box-bigger'>
+                <MDBCardBody className="make-box-bigger">
                   <div className="row-cart">
                     <div className="col-75">
                       <div className="container-cart">
@@ -205,7 +228,7 @@ class CartPayment extends Component {
               </MDBCard>
             </MDBCol>
           </MDBRow>
-        </MDBContainer> 
+        </MDBContainer>
       </div>
     );
   }

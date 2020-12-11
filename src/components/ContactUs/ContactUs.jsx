@@ -1,8 +1,8 @@
 import React from "react";
-import "./ContactUs.css"
-import { Facebook } from 'react-feather';
-import { Twitter } from 'react-feather';
-import { Instagram } from 'react-feather';
+import "./ContactUs.css";
+import { Facebook } from "react-feather";
+import { Twitter } from "react-feather";
+import { Instagram } from "react-feather";
 
 const ContactUs = (props) => {
   return (
@@ -14,8 +14,11 @@ const ContactUs = (props) => {
               <div className="col-xs-12" role="tabpanel">
                 <div className="row">
                   <div className="col-xs-4 col-sm-12">
-                    {/* <!-- Nav tabs --> */}
-                    <ul className="nav icon-tabs ul-fix " id="nav-tabs" role="tablist">
+                    <ul
+                      className="nav icon-tabs ul-fix "
+                      id="nav-tabs"
+                      role="tablist"
+                    >
                       <li role="presentation" className="active">
                         <a
                           href="#when"
@@ -43,7 +46,6 @@ const ContactUs = (props) => {
                     </ul>
                   </div>
                   <div className="col-xs-8 col-sm-12 mt60">
-                    {/* <!-- Tab panes --> */}
                     <div className="tab-content" id="tabs-collapse">
                       <div
                         role="tabpanel"
@@ -58,9 +60,22 @@ const ContactUs = (props) => {
                         <div className="tab-inner">
                           <div className="row">
                             <div className="ul-fix2 ">
-                              <i className="lead"><Facebook className="fa-facebook " color="white" size={52}/> </i>
-                              <i><Twitter className="fa-twitter " size={52}/></i>
-                              <i><Instagram className="fa-instagram " size={52}/></i>
+                              <i className="lead">
+                                <Facebook
+                                  className="fa-facebook "
+                                  color="white"
+                                  size={52}
+                                />{" "}
+                              </i>
+                              <i>
+                                <Twitter className="fa-twitter " size={52} />
+                              </i>
+                              <i>
+                                <Instagram
+                                  className="fa-instagram "
+                                  size={52}
+                                />
+                              </i>
                             </div>
                             <div className="col-sm-5"></div>
                           </div>
@@ -76,6 +91,6 @@ const ContactUs = (props) => {
       </div>
     </div>
   );
-}; 
+};
 
 export default ContactUs;

@@ -19,7 +19,6 @@ const Bestsellers = (props) => {
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-              {/* add makeup images */}
               <ul
                 className="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled"
                 data-items="3"
@@ -63,7 +62,7 @@ const Bestsellers = (props) => {
                     alt=""
                   />
                 </li>
-                
+
                 <li>
                   <img
                     src="assets/img/logo/milani-blush.jpeg"

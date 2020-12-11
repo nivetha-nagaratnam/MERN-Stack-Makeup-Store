@@ -5,7 +5,7 @@ const Testimony = (props) => {
     <div
       className="dark-wrapper opaqued parallax"
       data-parallax="scroll"
-      data-image-src="assets/img/bg/bg5.jpg"
+      data-image-src=""
       data-speed="0.7"
     >
       <div className="section-inner">
@@ -41,11 +41,16 @@ const Testimony = (props) => {
                           </div>
                         </div>
                         <div className="col-xs-9">
-                          <p style={{ fontSize: '20px' }} className="lead">
+                          <p style={{ fontSize: "20px" }} className="lead">
                             This website is my go to place to buy makeup
                             products.
                           </p>
-                          <p style={{ fontSize: '18px' }} className="lead secondary-font">Charles Davies</p>
+                          <p
+                            style={{ fontSize: "18px" }}
+                            className="lead secondary-font"
+                          >
+                            Charles Davies
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -65,11 +70,16 @@ const Testimony = (props) => {
                           </div>
                         </div>
                         <div className="col-xs-9">
-                          <p style={{ fontSize: '20px' }} className="lead">
+                          <p style={{ fontSize: "20px" }} className="lead">
                             Sephora who? I stopped shopping there after I
                             discovered Our Little Secret.
                           </p>
-                          <p style={{ fontSize: '18px' }} className="lead secondary-font">Charles Davies</p>
+                          <p
+                            style={{ fontSize: "18px" }}
+                            className="lead secondary-font"
+                          >
+                            Charles Davies
+                          </p>
                         </div>
                       </div>
                     </div>

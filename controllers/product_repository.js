@@ -1,3 +1,4 @@
+// got this from https://www.wrappixel.com/building-a-shopping-cart-in-nodejs/
 const Product = require("../models/product");
 exports.products = async () => {
     const products = await Product.find();
