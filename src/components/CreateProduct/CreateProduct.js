@@ -45,7 +45,7 @@ class CreateProduct extends Component {
     };
 
     axios
-      .post("http://localhost:3000/api/products", data)
+      .post("/api/products", data)
       .then((res) => {
         this.setState({
           name: "",
