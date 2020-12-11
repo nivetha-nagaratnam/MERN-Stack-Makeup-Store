@@ -153,10 +153,10 @@ class ProductsDetailPage extends Component {
     let reviewItems = review.map((rev) => {
       return (
         <tbody>
-          <tr className="make-font-bigger">
-            <td className="make-font-bigger">{rev.user}</td>
-            <td className="make-font-bigger">{rev.content}</td>
-            <td className="make-font-bigger">{rev.rating}</td>
+          <tr >
+            <td >{rev.user}</td>
+            <td >{rev.content}</td>
+            <td >{rev.rating}</td>
           </tr>
         </tbody>
       );
