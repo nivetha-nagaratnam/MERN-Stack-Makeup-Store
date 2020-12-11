@@ -101,7 +101,7 @@ class CartPage extends Component {
                         <div className="row mt-5">
                           <div className="col-lg-9">
                             <div className="row shop-listing">
-                              <table className="table shop-table make-body-bigger">
+                              <table className="table shop-table">
                                 <tr>
                                   <th className="b-0">Name</th>
                                   <th className="b-0">Price</th>
