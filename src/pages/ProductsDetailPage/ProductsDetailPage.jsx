@@ -88,7 +88,7 @@ class ProductsDetailPage extends Component {
           rating: "",
         });
         //refresh page
-        // window.location.reload(false);
+        window.location.reload(false);
       })
       .catch((err) => {
         console.log("Error in CreateReview!");
@@ -465,6 +465,9 @@ class ProductsDetailPage extends Component {
                 alt="wrapkit"
                 className="img-fluid"
               /> */}
+               <span className="likebtn-wrapper" data-theme="custom" data-icon_l="hrt2" data-icon_l_c_v="#fb0545"
+        data-icon_d_c_v="#000000" data-ef_voting="buzz" data-identifier="like" data-counter_zero_show="true"
+        data-share_size="large"></span>
             </div>
           </div>
         </main>

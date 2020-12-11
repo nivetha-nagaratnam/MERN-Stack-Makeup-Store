@@ -82,16 +82,15 @@ const NavBar = (props) => {
             <div className="make-nav-bar-block">
               <ul class="nav text-center">
                 <li>
-                  <Link
-                    to=""
-                    className="NavBar-link"
+                  <div
+                  className="NavBar-link"
                     onClick={props.handleLogout}
                   >
-                    Log Out
-                  </Link>
+                    Log Out <br></br>
                   <span className="NavBar-welcome">
                     Welcome, {props.user.name}
                   </span>
+                  </div>
                 </li>
                 <li>
                     <Link to="/signup" className="NavBar-link">
@@ -151,7 +150,7 @@ const NavBar = (props) => {
     </div>
   ) : (
     <div>
-      <nav class="navbar navbar-default navbar-fixed-top fadeInDown">
+      <nav >
         <div class="container-fluid">
           {/* <!-- Brand and toggle get grouped for better mobile display --> */}
           <div class="navbar-header ">
@@ -172,32 +171,22 @@ const NavBar = (props) => {
           <div class="collapse navbar-collapse" id="main-navigation">
             <div className="make-nav-bar-block">
               <ul class="nav text-center">
-                <div>
-                  <li>
-                    <Link to="/login" className="NavBar-link">
-                      Log In
-                    </Link>
-                  </li>
-                  <li>
+                <li>
                     <Link to="/signup" className="NavBar-link">
                       Sign Up
                     </Link>
                   </li>
-                  <li class="navbar-brand ">
-                  <div className="test">Our Little Secret</div>
-                  </li>
+                  <li >
+                <div className="test">Our Little Secret</div>
+                </li>
                   <li>
-                    <Link to="/" className="NavBar-link">
-                      Home Page
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/view-all-products" className="NavBar-link">
-                      View All Products
-                    </Link>
-                  </li>
-                </div>
-                ;
+                <Link to='/login' className='NavBar-link'>Log In</Link>
+                </li>
+                
+               
+              
+              
+
               </ul>
             </div>
           </div>
@@ -205,7 +194,6 @@ const NavBar = (props) => {
         </div>
         {/* <!-- /.container-fluid --> */}
       </nav>
-      ;
     </div>
   );
 

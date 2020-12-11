@@ -23,9 +23,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: userService.getUser()
+      user: userService.getUser(),
+      isHomePage: true
     };
   }
+
+  componentDidMount() {
+    if(window.location.pathname === "") {
+      this.setState({ isHomePage: true });
+    } else if(window.location.pathname === "/"){
+      this.setState({ isHomePage: true });
+    } else {
+      this.setState({ isHomePage: false });
+  }
+  }
+
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
@@ -34,7 +46,6 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() });
   };
-
 
   render() {
     return (
@@ -46,8 +57,8 @@ class App extends Component {
           handleLogout={this.handleLogout} />
           </div>
           </body>
-        {((window.location.pathname === "") || (window.location.pathname === "/"))
-          && <LandingPage user={this.state.user} handleLogout={this.handleLogout} />}
+        {this.state.isHomePage
+          && <LandingPage/>}
         <Switch>
           <Route
             exact

@@ -61,6 +61,7 @@ class CreateProduct extends Component {
         });
         //redirect
         this.props.history.push("/");
+        window.location.reload(false);
       })
       .catch((err) => {
         console.log("Error in CreateProduct!");

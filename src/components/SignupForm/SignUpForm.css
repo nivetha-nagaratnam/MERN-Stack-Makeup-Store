@@ -1,5 +1,12 @@
+.make-form-bigger {
+    min-width: 500px;
+  }
 
-.LoginPage {
+  .make-title-bigger  {
+    font-size:30px;
+  }
+
+  .SignUpPage {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -7,12 +14,4 @@
     margin-bottom: 50px;
     min-width: 500px;
     min-height: 500px;
-  }
-
-  .make-form-bigger {
-    min-width: 500px;
-  }
-
-  .make-title-bigger  {
-    font-size:30px;
   }

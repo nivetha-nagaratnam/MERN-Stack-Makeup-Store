@@ -40,7 +40,7 @@ class CartPage extends Component {
         this.setState({
           ...this.state,
           carts: res.data.data.items,
-          payload: res.data,
+          payload: res.data.data,
         });
       })
       .catch((err) => {
@@ -70,6 +70,7 @@ class CartPage extends Component {
       .then((res) => {
         this.fetchCart();
         this.props.history.push("/");
+        window.location.reload(false);
       })
       .catch((err) => {
         console.log("Error in empty cart");

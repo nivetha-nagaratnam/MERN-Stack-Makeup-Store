@@ -23,6 +23,7 @@ class ProductCard extends Component {
       .delete('http://localhost:3000/api/products/'+id)
       .then(res => {
         this.props.history.push("/");
+        window.location.reload(false);
       })
       .catch(err => {
         console.log("Error from ProductDetailsPage_deleteClick");
