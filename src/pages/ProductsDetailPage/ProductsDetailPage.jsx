@@ -46,7 +46,7 @@ class ProductsDetailPage extends Component {
       quantity: quantity,
     };
     axios
-      .post("/api/cart", requestData)
+      .post("http://localhost:3000/api/cart", requestData)
       .then((res) => {
         console.log("item Added", res);
       })
@@ -82,7 +82,7 @@ class ProductsDetailPage extends Component {
 
     axios
       .post(
-        "/api/reviews/products/" +
+        "http://localhost:3000/api/reviews/products/" +
           this.props.match.params.id +
           "/reviews",
         data
@@ -113,7 +113,7 @@ class ProductsDetailPage extends Component {
 
     axios
       .post(
-        "/api/dupes/products/" +
+        "http://localhost:3000/api/dupes/products/" +
           this.props.match.params.id +
           "/dupes",
         data
@@ -133,7 +133,7 @@ class ProductsDetailPage extends Component {
 
   componentDidMount() {
     axios
-      .get("/api/products/" + this.props.match.params.id)
+      .get("http://localhost:3000/api/products/" + this.props.match.params.id)
       .then((res) => {
         this.setState({
           product: res.data,
@@ -153,10 +153,10 @@ class ProductsDetailPage extends Component {
     let reviewItems = review.map((rev) => {
       return (
         <tbody>
-          <tr>
-            <td>{rev.user}</td>
-            <td>{rev.content}</td>
-            <td>{rev.rating}</td>
+          <tr className="make-font-bigger">
+            <td className="make-font-bigger">{rev.user}</td>
+            <td className="make-font-bigger">{rev.content}</td>
+            <td className="make-font-bigger">{rev.rating}</td>
           </tr>
         </tbody>
       );

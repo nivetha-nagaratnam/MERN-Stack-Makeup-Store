@@ -14,7 +14,7 @@ class CartPage extends Component {
   }
   componentDidMount() {
     axios
-      .get("/api/cart")
+      .get("http://localhost:3000/api/cart")
       .then((res) => {
         this.setState({
           ...this.state,
@@ -29,7 +29,7 @@ class CartPage extends Component {
 
   fetchCart = () => {
     axios
-      .get("/api/cart")
+      .get("http://localhost:3000/api/cart")
       .then((res) => {
         this.setState({
           ...this.state,
@@ -48,7 +48,7 @@ class CartPage extends Component {
       quantity: 1,
     };
     axios
-      .post("/api/cart", increaseQtyData)
+      .post("http://localhost:3000/api/cart", increaseQtyData)
       .then((res) => {
         console.log(res.data.items);
         this.fetchCart();
@@ -60,7 +60,7 @@ class CartPage extends Component {
 
   emptyCart = () => {
     axios
-      .delete("/api/cart/empty-cart")
+      .delete("http://localhost:3000/api/cart/empty-cart")
       .then((res) => {
         this.fetchCart();
         this.props.history.push("/");
@@ -101,7 +101,7 @@ class CartPage extends Component {
                         <div className="row mt-5">
                           <div className="col-lg-9">
                             <div className="row shop-listing">
-                              <table className="table shop-table ">
+                              <table className="table shop-table make-body-bigger">
                                 <tr>
                                   <th className="b-0">Name</th>
                                   <th className="b-0">Price</th>

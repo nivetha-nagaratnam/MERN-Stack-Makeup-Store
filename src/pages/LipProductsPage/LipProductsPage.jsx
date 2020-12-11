@@ -14,7 +14,7 @@ class LipProductsPage extends Component {
 
   componentDidMount() {
     axios
-      .get("/api/products/lips", {
+      .get("http://localhost:3000/api/products/lips", {
         headers: {
           Authorization: "Bearer " + tokenService.getToken(),
         },
